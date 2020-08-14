@@ -13,8 +13,8 @@ def read_hydrograph(csv_path, datetime_fld='datetime', date_format='%d%b%Y  %H%M
     return df
 
 
-def import_hydrograph(hydro_csv, xpx_path, datetime_fld='datetime'):
-    df = read_hydrograph(hydro_csv, datetime_fld)
+def import_hydrograph(hydro_csv, xpx_path, datetime_fld='datetime', date_format='%d%b%Y  %H%M'):
+    df = read_hydrograph(hydro_csv, datetime_fld, date_format)
     hours = df['hour'].values
     ct = len(hours)
     hours_list = ' '.join([str(x) for x in hours])
@@ -32,6 +32,7 @@ def import_hydrograph(hydro_csv, xpx_path, datetime_fld='datetime'):
 
 
 if __name__ == '__main__':
+    # for help: https://medium.com/p/a9303df7a46b
     # the hydrograph csv file path, e.g. c:\temp\hydrograph.csv
         # first column should be datetime and the date format is: 01Jun2007  0010
         # other columns should have the node name in XPSWMM/XPSTORM as the header
@@ -41,14 +42,14 @@ if __name__ == '__main__':
         # 01Jun2007  0010,0.107,0.17,0.065
         # 01Jun2007  0015,0.268,0.45,0.162
 
-    hydrograph_csv = r'./../test/data/sample_output.csv'
+    hydrograph_csv = r'C:\Users\Mel.Meng\Documents\GitHub\xpswmm\xpx\source\test\data\sample_output.csv'
     # the frist column name
     date_fld = 'datetime'
     # date time format , for more information: https://docs.python.org/3/library/datetime.html#strftime-strptime-behavior
     date_format = '%d%b%Y  %H%M'
 
     # path to the xpx file, which will be used to import the time series into XPSWMM
-    output_xpx = r'./../test/data/sample.xpx'
+    output_xpx = r'C:\Users\Mel.Meng\Documents\GitHub\xpswmm\xpx\source\test\data\sample.xpx'
 
 
     import_hydrograph(hydrograph_csv, output_xpx, date_fld, date_format)
