@@ -32,7 +32,7 @@ def import_hydrograph(hydro_csv, xpx_path, datetime_fld='datetime', date_format=
 
 
 if __name__ == '__main__':
-    # for help: https://medium.com/p/a9303df7a46b
+    # for help: https://medium.com/@mel.meng.pe/batch-hydrographs-into-xpswmm-a9303df7a46b
     # the hydrograph csv file path, e.g. c:\temp\hydrograph.csv
         # first column should be datetime and the date format is: 01Jun2007  0010
         # other columns should have the node name in XPSWMM/XPSTORM as the header
