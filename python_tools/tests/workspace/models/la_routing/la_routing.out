@@ -1,0 +1,1707 @@
+  Current Directory:   C:\PROGRA~1\Innovyze\xpswmm2019.1.3_x64
+  Engine Name: C:\PROGRA~1\Innovyze\xpswmm2019.1.3_x64\engine\swmmengw2D64.exe
+  Input File: C:\temp\1D\la_routing\la_routing.XP
+
+          *===============================================*
+          |                   xpswmm                      |
+          |     Storm and Wastewater Management Model     |
+          |            Developed by Innovyze.             |
+          |===============================================|
+          |                                               |
+          | Last Update      : Apr 10 2020                |
+          | Interface Version: 2019.1.3                   |
+          | Engine Version   : 12.0                       |
+          | Data File Version: 12.62                      |
+          |                                               |
+          |                                               |
+          *===============================================*
+
+Engine Name: C:\PROGRA~1\Innovyze\xpswmm2019.1.3_x64\engine\swmmengw2D64.exe
+
+
+*====================================================*
+|       Input and Output file names by Layer         |
+*====================================================*
+
+ Input File  to Layer #     1 C:\temp\la_routing.int
+ Output File to Layer #     1 JOT.US
+
+*===========================================================*
+|                Configuration Parameters                   |
+|  Configuration Parameters, both those that are hardwired  |
+|  and those added to the simulation are listed below.      |
+|  Configuration Parameters that start with a $ are set in  |
+|  the engine as defaults.  The remaining in UPPERCASE      |
+|  have been added to the simulation in the Configuration-> |
+|  Configuration Parameters dialog or as Engine Defaults in |
+|  the SWMXP.INI file.                                      |
+|                                                           |
+|  Consult the Help File for the specific meaning/purpose   |
+|  of any particular parameter.                             |
+|                                                           |
+|  Note:                                                    |
+|  The second column denotes the value of the parameter.    |
+*===========================================================*
+
+ $powerstation                        0.0000         1         2
+ $perv                                0.0000         0         4
+ $oldegg                              0.0000         0         7
+ $as                                  0.0000         0        11
+ $noflat                              0.0000         0        21
+ $oldomega                            0.0000         0        24
+ $oldvol                              0.0000         1        28
+ $implicit                            0.0000         1        29
+ $oldhot                              0.0000         1        31
+ $oldscs                              0.0000         0        33
+ $flood                               0.0000         1        40
+ $nokeys                              0.0000         0        42
+ $pzero                               0.0000         0        55
+ $oldvol2                             0.0000         2        59
+ $storage2                            0.0000         3        62
+ $oldhot1                             0.0000         1        63
+ $pumpwt                              0.0000         1        70
+ $ecloss                              0.0000         1        77
+ $exout                               0.0000         0        97
+ $spatial = 0.90                      0.9000         5       124
+ $djref = -1.0                       -0.1000         3       143
+ $weirlen = 50                       50.0000         1       153
+ $oldbnd                              0.0000         1       154
+ $nogrelev                            0.0000         1       161
+ $ncmid                               0.0000         0       164
+ $new_nl_97                           0.0000         2       290
+ SCSIADEPTH=ON                        0.0000         1       293
+ $best97                              0.0000         1       294
+ $newbound                            0.0000         1       295
+ $q_tol = 0.01                        0.0001         1       316
+ $new_storage                         0.0000         1       322
+ $old_iteration                       0.0000         1       333
+ MINLEN=1                             1.0000         1       346
+ $review_elevation                    0.0000         1       383
+ $use_half_volume                     0.0000         1       385
+ VERT_WALLS=ON                        0.0000         1       389
+ $min_ts = 1.0                        1.0000         1       407
+ $design_restart = on                 0.0000         1       412
+ $zero_value=1.e-05                   0.0000         1       415
+ SUBCATCHMENT_RES=ON                  0.0000         1       419
+ $relax_depth = on                    0.0000         1       427
+ $saveallpts = on                     0.0000         1       434
+ PUMP_NEGHD=ON                        0.0000         1       437
+ $channel_geometry=1                  0.0000         1       456
+ PROJUNITS == US                      0.0000         1       462
+
+ *===========================================================* 
+ |   The XPSWMM/XPSTORM engine internally uses object IDs    | 
+ |     instead of full object names to represent objects.    |
+ |   Included below is a table of these IDs along with the   |
+ |         name of the object that ID corresponds to.        |
+ *===========================================================* 
+        Object ID         Object          
+           Number          Name         
+ ================  ====================    
+              336  CBMHB1134                                                                       
+              337  CBMHB1136                                                                       
+              338  CBMHB1139                                                                       
+              342  CBMHB1163                                                                       
+              343  CBOTH1169                                                                       
+              372  CBPRV1147                                                                       
+              373  CBPRV1149                                                                       
+              376  CBPRV1158                                                                       
+              408  DU0024                                                                          
+              409  DU0025                                                                          
+              410  DU0026                                                                          
+              411  DU0027                                                                          
+              453  DU0303                                                                          
+              486  DU0525                                                                          
+              509  DU0588                                                                          
+              558  MHLAC0279                                                                       
+              559  MHLAC0281                                                                       
+              560  MHLAC0283                                                                       
+              595  MHMHB0280                                                                       
+              603  OCOTH1164                                                                       
+              613  OFLAC0022                                                                       
+              623  OFMHB0021                                                                       
+              911  PILAC033                                                                        
+              912  PILAC034                                                                        
+              914  PILAC036_1                                                                      
+              915  PILAC036_2                                                                      
+              916  PILAC036_3                                                                      
+              917  PILAC036_4                                                                      
+              918  PILAC037                                                                        
+              969  PILAC1101                                                                       
+              995  PILAC866                                                                        
+              996  PILAC867                                                                        
+              997  PILAC868_1                                                                      
+              998  PILAC868_2                                                                      
+             1119  PIMHB438_1                                                                      
+             1120  PIMHB438_2                                                                      
+             1152  PIMHB509                                                                        
+             1155  PIMHB628                                                                        
+             1214  PIMHB986                                                                        
+             1221  PIOTH774_1                                                                      
+             1222  PIOTH774_2                                                                      
+             1264  Link440                                                                         
+             1266  Link442                                                                         
+
+ *==========================================================*
+ | Parameter Values on the Tapes Common Block.These are the |
+ | values read from the data file and dynamically allocated |
+ | by the model for this simulation.                        |
+ *==========================================================*
+
+  Number of Subcatchments in the Runoff Block (NW)....     0
+  Number of Channel/Pipes in the Runoff Block (NG)....     0
+  Runoff Water quality constituents (NRQ).............     0
+  Runoff Land Uses per Subcatchment (NLU).............     0
+  Number of Elements in the Transport Block (NET).....     0
+  Number of Storage Junctions in Transport (NTSE).....     0
+  Number of Input Hydrographs in Transport (NTH)......     0
+  Number of Elements in the Extran Block (NEE)........    22
+  Number of Groundwater Subcatchments in Runoff (NGW).     0
+  Number of Interface locations for all Blocks (NIE)..    22
+  Number of Pumps in Extran (NEP).....................     0
+  Number of Orifices in Extran (NEO)..................     0
+  Number of Tide Gates/Free Outfalls in Extran (NTG)..     1
+  Number of Extran Weirs (NEW)........................     0
+  Number of scs hydrograph points.....................     1
+  Number of Extran printout locations (NPO)...........     0
+  Number of Tide elements in Extran (NTE).............     1
+  Number of Natural channels (NNC)....................     0
+  Number of Storage junctions in Extran (NVSE)........     0
+  Number of Time history data points in Extran(NTVAL).     0
+  Number of Variable storage elements in Extran (NVST)     0
+  Number of Input Hydrographs in Extran (NEH).........     0
+  Number of Particle sizes in Transport Block (NPS)...     0
+  Number of User defined conduits (NHW)...............    22
+  Number of Connecting conduits in Extran (NECC)......    20
+  Number of Upstream elements in Transport (NTCC).....    10
+  Number of Storage/treatment plants (NSTU)...........     1
+  Number of Values for R1 lines in Transport (NR1)....     0
+  Number of Nodes to be allowed for (NNOD)............    22
+  Number of Plugs in a Storage Treatment Unit.........     1
+
+ XXX End of Header Section XXX
+
+ #######################################################
+ #    Entry made to the HYDRAULIC Layer of XP-SWMM     #
+ #    Last Updated in June, 2014 by Innovyze           #
+ #######################################################
+
+                                                                                     
+                                                                                     
+
+
+ *===========================================================*
+ |        HYDRAULICS TABLES IN THE OUTPUT FILE               |
+ |  These are the more important tables in the output file.  |
+ |  You can use your editor to find the table numbers,       |
+ |  for example: search for Table E20 to check continuity.   |
+ |  This output file can be imported into a Word Processor   |
+ |  and printed on US letter or A4 paper using portrait      |
+ |  mode, courier font, a size of 8 pt. and margins of 0.75  |
+ |                                                           |
+ | Table E1   - Basic Conduit Data                           |
+ | Table E2   - Conduit Factor Data                          |
+ | Table E3a  - Junction Data                                |
+ | Table E3b  - Junction Data                                |
+ | Table E4   - Conduit Connectivity Data                    |
+ | Table E4a  - Dry Weather Flow Data                        |
+ | Table E4b  - Real Time Control Data                       |
+ | Table E5   - Junction Time Step Limitation Summary        |
+ | Table E5a  - Conduit Explicit Condition Summary           |
+ | Table E6   - Final Model Condition                        |
+ | Table E7   - Iteration Summary                            |
+ | Table E8   - Junction Time Step Limitation Summary        |
+ | Table E9   - Junction  Summary  Statistics                |
+ | Table E10  - Conduit   Summary  Statistics                |
+ | Table E11  - Area assumptions used in the analysis        |
+ | Table E12  - Mean conduit information                     |
+ | Table E13  - Channel losses(H) and culvert info           |
+ | Table E13a - Culvert Analysis Classification              |
+ | Table E14  - Natural Channel Overbank Flow Information    |
+ | Table E14a - Natural Channel Encroachment Information     |
+ | Table E14b - Floodplain Mapping                           |
+ | Table E15  - Spreadsheet Info List                        |
+ | Table E15a - Spreadsheet Reach List                       |
+ | Table E16  - New Conduit Output Section                   |
+ | Table E17  - Pump Operation                               |
+ | Table E18  - Junction Continuity Error                    |
+ | Table E19  - Junction Inflow & Outflow Listing            |
+ | Table E20  - Junction Flooding and Volume List            |
+ | Table E21  - Continuity balance at simulation end         |
+ | Table E22  - Model Judgement Section                      |
+ *==========================================================*
+
+ Time Control from Hydraulics Job Control 
+ Year.........    2014 Month.......       1
+ Day..........       1 Hour........       0
+ Minute.......       0 Second......       0
+
+
+ Control information for simulation
+ ----------------------------------
+
+ Integration cycles.................      5760
+ Length of integration step is......     15.00 seconds
+ Simulation length..................     24.00 hours
+ Do not create equiv. pipes(NEQUAL).         0
+ Use U.S. customary units for I/O...         0
+ Printing starts in cycle...........         1
+ Intermediate printout intervals of.       500 cycles
+ Intermediate printout intervals of.    125.00 minutes
+ Summary printout intervals of......       500 cycles
+ Summary printout time interval of..    125.00 minutes
+ Hot start file parameter (REDO)....         0
+ Initial time.......................      0.00 hours
+
+ Iteration variables: Flow Tolerance.   0.00010
+                      Head Tolerance.   0.00050 
+     Minimum depth (m or ft).........   0.00001
+     Underrelaxation parameter.......   0.85000
+     Time weighting parameter........   0.85000
+     Conduit roughness factor........   1.00000
+     Flow adjustment factor..........   1.00000
+     Initial Condition Smoothing.....         0
+     Courant Time Step Factor........   1.00000
+     Default Expansion/Contraction K.   0.00000
+     Default Entrance/Exit K.........   0.00000
+     Routing Method..................   Dynamic Wave                            
+ Default surface area of junctions...     12.57 square feet.
+ Minimum Junction/Conduit Depth......   0.00001 feet.
+ Ponding Area Coefficient............   5000.00 
+ Ponding Area Exponent...............    1.0000 
+ Minimum Orifice Length..............   1000.00 feet.
+ NJSW input hydrograph junctions.....     0
+      or user defined hydrographs....
+
+ *==================================================*
+ |          Table E1 - Conduit Data                 |
+ *==================================================*
+
+                                                                                             Trapezoid  Hazen
+  Inp              Conduit     Length    Conduit      Area    Manning  Max Width      Depth       Side  Williams
+  Num                 Name       (ft)      Class    (ft^2)      Coef.    (ft)         (ft)      Slopes  c-factor
+ ---- -------------------- ---------- ----------   -------    -------  ---------      -----    -------  -------
+    1             PILAC033   268.9000   Circular   28.2743     0.0130     6.0000     6.0000
+    2             PILAC034    23.2000   Circular    1.7671     0.0130     1.5000     1.5000
+    3           PILAC036_1   133.5000   Circular   28.2743     0.0130     6.0000     6.0000
+    4           PILAC036_2    56.5000   Circular   28.2743     0.0130     6.0000     6.0000
+    5           PILAC036_3    14.6000   Circular   28.2743     0.0130     6.0000     6.0000
+    6           PILAC036_4   124.1000   Circular   28.2743     0.0130     6.0000     6.0000
+    7             PILAC037   366.9000   Circular    3.1416     0.0130     2.0000     2.0000
+    8            PILAC1101     8.5000   Circular    1.7671     0.0130     1.5000     1.5000
+    9             PILAC866    20.2000   Circular    1.7671     0.0130     1.5000     1.5000
+   10             PILAC867   160.8000   Circular   28.2743     0.0130     6.0000     6.0000
+   11           PILAC868_1   160.5000   Circular   15.9043     0.0130     4.5000     4.5000
+   12           PILAC868_2    14.3000   Circular   15.9043     0.0130     4.5000     4.5000
+   13           PIMHB438_1    48.3000   Circular    1.7671     0.0130     1.5000     1.5000
+   14           PIMHB438_2   169.0000   Circular    1.7671     0.0130     1.5000     1.5000
+   15             PIMHB509    30.5000   Circular    1.7671     0.0130     1.5000     1.5000
+   16             PIMHB628   164.5000   Circular    1.7671     0.0130     1.5000     1.5000
+   17             PIMHB986   140.0000   Circular    1.7671     0.0130     1.5000     1.5000
+   18           PIOTH774_1    45.4000   Circular    0.7854     0.0130     1.0000     1.0000
+   19           PIOTH774_2    64.4000   Circular    0.7854     0.0130     1.0000     1.0000
+   20              Link440    10.0000   Circular    0.1963     0.0140     0.5000     0.5000
+   21              Link442    10.0000   Circular    0.1963     0.0140     0.5000     0.5000
+ Total length of all conduits ....      2034.1000 feet 
+
+ *===================================================*
+ | If there are messages about (sqrt(g*d)*dt/dx), or |
+ | the sqrt(wave celerity)*time step/conduit length  |
+ | in the output file all it means is that the       |
+ | program will lower the internal time step to      |
+ | satisfy this condition (explicit condition).      |
+ | You control the actual internal time step by      |
+ | using the minimum courant time step factor in the |
+ | HYDRAULICS job control.  The message put in words |
+ | states that the smallest conduit with the fastest |
+ | velocity will control the time step selection.    |
+ | You have further control by using the modify      |
+ | conduit option in the HYDRAULICS Job Control.     |
+ *===================================================*
+
+  
+              Conduit     Courant
+                 Name       Ratio
+ --------------------   ---------
+            PILAC033        0.78
+            PILAC034        4.49  ===> Warning ! (sqrt(wave celerity)*time step/conduit length)
+          PILAC036_1        1.56  ===> Warning ! (sqrt(wave celerity)*time step/conduit length)
+          PILAC036_2        3.69  ===> Warning ! (sqrt(wave celerity)*time step/conduit length)
+          PILAC036_3       14.28  ===> Warning ! (sqrt(wave celerity)*time step/conduit length)
+          PILAC036_4        1.68  ===> Warning ! (sqrt(wave celerity)*time step/conduit length)
+            PILAC037        0.33
+           PILAC1101       12.26  ===> Warning ! (sqrt(wave celerity)*time step/conduit length)
+            PILAC866        5.16  ===> Warning ! (sqrt(wave celerity)*time step/conduit length)
+            PILAC867        1.30  ===> Warning ! (sqrt(wave celerity)*time step/conduit length)
+          PILAC868_1        1.12  ===> Warning ! (sqrt(wave celerity)*time step/conduit length)
+          PILAC868_2       12.63  ===> Warning ! (sqrt(wave celerity)*time step/conduit length)
+          PIMHB438_1        2.16  ===> Warning ! (sqrt(wave celerity)*time step/conduit length)
+          PIMHB438_2        0.62
+            PIMHB509        3.42  ===> Warning ! (sqrt(wave celerity)*time step/conduit length)
+            PIMHB628        0.63
+            PIMHB986        0.74
+          PIOTH774_1        1.87  ===> Warning ! (sqrt(wave celerity)*time step/conduit length)
+          PIOTH774_2        1.32  ===> Warning ! (sqrt(wave celerity)*time step/conduit length)
+             Link440        6.02  ===> Warning ! (sqrt(wave celerity)*time step/conduit length)
+             Link442        6.02  ===> Warning ! (sqrt(wave celerity)*time step/conduit length)
+
+ *==================*
+ |  Conduit Volume  |
+ *==================*
+
+ Full pipe or full open conduit volume
+ Input full depth volume............    2.6534E+04 cubic feet
+
+
+ *===================================================*
+ |           Table E3a - Junction Data               |
+ *===================================================*
+
+  Inp             Junction      Ground     Crown    Invert    Qinst  Initial  Interface
+  Num                 Name   Elevation Elevation Elevation      cfs Depth-ft   Flow (%)
+  --- --------------------   --------- --------- --------- -------- --------  ---------
+    1           CBMHB1134     74.6860   68.4900   66.9900   0.0000   0.0000    100.0000
+    2           CBMHB1136     60.0990   57.8400   56.3400   0.0000   0.0000    100.0000
+    3           CBMHB1139     36.6230   36.1300   34.6300   0.0000   0.0000    100.0000
+    4           CBMHB1163     57.3890   56.6200   55.6200   0.0000   0.0000    100.0000
+    5           CBOTH1169     57.6160   57.1200   56.1200   0.0000   0.0000    100.0000
+    6           CBPRV1147     63.5790   63.3800   61.8800   0.0000   0.0000    100.0000
+    7           CBPRV1149     62.8940   62.6700   61.1700   0.0000   0.0000    100.0000
+    8           CBPRV1158     28.0710   27.5200    0.0000   0.0000   0.0000    100.0000
+    9              DU0024     62.0460   48.9420   42.9420   0.0000   0.0000    100.0000
+   10              DU0025     76.3800   49.7080   43.7080   0.0000   0.0000    100.0000
+   11              DU0026     43.1720   38.0000   32.0000   0.0000   0.0000    100.0000
+   12              DU0027     26.8000   23.5000   19.0000   0.0000   0.0000    100.0000
+   13              DU0303     61.4460   57.7090   56.2090   0.0000   0.0000    100.0000
+   14              DU0525     27.9680   25.8680    0.0000   0.0000   0.0000    100.0000
+   15              DU0588     63.6220   49.0180   43.0180   0.0000   0.0000    100.0000
+   16           MHLAC0279     91.9530   52.2100   46.2100   0.0000   0.0000    100.0000
+   17           MHLAC0281     91.5020   50.5400   44.5400   0.0000   0.0000    100.0000
+   18           MHLAC0283     51.0820   42.0000   36.0000   0.0000   0.0000    100.0000
+   19           MHMHB0280     60.2600   53.9900   52.4900   0.0000   0.0000    100.0000
+   20           OCOTH1164     55.9030   51.3520    0.0000   0.0000   0.0000    100.0000
+   21           OFLAC0022     28.0000   20.0000    4.6100   0.0000   0.0000    100.0000
+   22           OFMHB0021     22.9550   18.7500   17.2500   0.0000   0.0000    100.0000
+
+
+ *===================================================*
+ |           Table E3b - Junction Data               |
+ *===================================================*
+
+  Inp             Junction           X             Y       Type of      Type of  Maximum       Pavement  
+  Num                 Name         Coord.        Coord.    Manhole        Inlet  Capacity    Shape   Slope
+ ---- --------------------    -----------   ----------- ---------- ------------  --------  -------- -------
+    1            CBMHB1134         0.0000        0.0000 2D Spill L       Normal                  0     0.00
+    2            CBMHB1136         0.0000        0.0000 2D Spill L       Normal                  0     0.00
+    3            CBMHB1139         0.0000        0.0000 2D Spill L       Normal                  0     0.00
+    4            CBMHB1163         0.0000        0.0000 2D Spill L       Normal                  0     0.00
+    5            CBOTH1169         0.0000        0.0000 2D Spill L       Normal                  0     0.00
+    6            CBPRV1147         0.0000        0.0000 2D Spill L       Normal                  0     0.00
+    7            CBPRV1149         0.0000        0.0000 2D Spill L       Normal                  0     0.00
+    8            CBPRV1158         0.0000        0.0000 2D Spill L       Normal                  0     0.00
+    9               DU0024         0.0000        0.0000 2D Spill L       Normal                  0     0.00
+   10               DU0025         0.0000        0.0000 2D Spill L       Normal                  0     0.00
+   11               DU0026         0.0000        0.0000 2D Spill L       Normal                  0     0.00
+   12               DU0027         0.0000        0.0000 2D Spill L       Normal                  0     0.00
+   13               DU0303         0.0000        0.0000 2D Spill L       Normal                  0     0.00
+   14               DU0525         0.0000        0.0000 2D Spill L       Normal                  0     0.00
+   15               DU0588         0.0000        0.0000 2D Spill L       Normal                  0     0.00
+   16            MHLAC0279         0.0000        0.0000 2D Spill L       Normal                  0     0.00
+   17            MHLAC0281         0.0000        0.0000 2D Spill L       Normal                  0     0.00
+   18            MHLAC0283         0.0000        0.0000 2D Spill L       Normal                  0     0.00
+   19            MHMHB0280         0.0000        0.0000 2D Spill L       Normal                  0     0.00
+   20            OCOTH1164         0.0000        0.0000 2D Invert        Normal                  0     0.00
+   21            OFLAC0022         0.0000        0.0000 No Ponding       Normal                  0     0.00
+   22            OFMHB0021         0.0000        0.0000 No Ponding       Normal                  0     0.00
+
+
+ *===================================================*
+ |           Table E4 - Conduit Connectivity         |
+ *===================================================*
+
+ Input              Conduit               Upstream            Downstream     Upstream  Downstream
+Number                 Name                   Node                  Node    Elevation   Elevation
+====== ====================   ====================  ====================    =========   =========
+     1             PILAC033              MHLAC0279             MHLAC0281      46.2100     44.5400   No Design
+     2             PILAC034              CBPRV1149                DU0024      61.1700     42.9420   No Design
+     3           PILAC036_1                 DU0025                DU0588      43.7080     43.0180   No Design
+     4           PILAC036_2              MHLAC0283                DU0026      36.0000     32.0000   No Design
+     5           PILAC036_3                 DU0588                DU0024      43.0180     42.9420   No Design
+     6           PILAC036_4                 DU0024             MHLAC0283      42.9420     36.0000   No Design
+     7             PILAC037                 DU0027             OFLAC0022      19.0000     18.0000   No Design
+     8            PILAC1101              CBPRV1147                DU0588      61.8800     43.0180   No Design
+     9             PILAC866              CBPRV1158                DU0525      26.0200     24.3680   No Design
+    10             PILAC867              MHLAC0281                DU0025      44.5400     43.7080   No Design
+    11           PILAC868_1                 DU0026                DU0525      32.0000     21.0000   No Design
+    12           PILAC868_2                 DU0525                DU0027      21.0000     19.0000   No Design
+    13           PIMHB438_1                 DU0303             MHMHB0280      56.2090     52.4900   No Design
+    14           PIMHB438_2              MHMHB0280             CBMHB1139      52.4900     34.6300   No Design
+    15             PIMHB509              CBMHB1136             MHMHB0280      56.3400     52.4900   No Design
+    16             PIMHB628              CBMHB1139             OFMHB0021      34.6300     17.2500   No Design
+    17             PIMHB986              CBMHB1134                DU0303      66.9900     56.2090   No Design
+    18           PIOTH774_1              CBOTH1169             CBMHB1163      56.1200     55.6200   No Design
+    19           PIOTH774_2              CBMHB1163             OCOTH1164      55.6200     50.3520   No Design
+    20              Link440              OCOTH1164             CBPRV1158       0.0000      0.0000   No Design
+    21              Link442              OFMHB0021             OFLAC0022      17.2500     10.0000   No Design
+
+
+ *================================================*
+ |          FREE OUTFALL DATA (DATA GROUP I1)     |
+ |         BOUNDARY CONDITION ON DATA GROUP J1    |
+ *================================================*
+
+ Outfall at Junction....OFLAC0022 has boundary condition number...         1
+
+ ===> Warning !!  Outfall Junction OFLAC0022 has two or more connecting conduits.
+
+
+ *================================================*
+ |        INTERNAL CONNECTIVITY INFORMATION       |
+ *================================================*
+
+              CONDUIT             JUNCTION             JUNCTION
+ -------------------- -------------------- --------------------
+              FREE# 1            OFLAC0022             BOUNDARY
+
+ *===================================================*
+ |        Boundary Condition Information             |
+ |                 Data Groups J1-J4                 |
+ *===================================================*
+
+
+ BC NUMBER..         1 has no control water surface.
+
+
+ ###########################################
+ # Header information from interface file: #
+ ###########################################
+
+ Title from first computational layer:
+                                                                                 
+ model: C:\temp\la_routing.int                                                   
+
+ Title from immediately preceding computational layer
+                                                                                 
+                                                                                 
+
+ Name of preceding layer:................                LACH
+ Initial Julian date (IDATEZ)......................   2014001
+ Initial time of day in seconds (TZERO)............       0.0
+ No. Transfered input locations....................         6
+ No. Transfered pollutants.........................         0
+ Size of total catchment area (acres)..............      1.00
+
+ #################################################
+ # Element numbers of interface inlet locations: # 
+ #################################################
+
+ CBMHB1134            CBMHB1136            CBMHB1139            CBPRV1147            CBPRV1149            CBPRV1158                                
+
+ Conversion factor to cfs for flow units on interface file.  Multiply by:     1.00000
+
+######## Important Information ########                                        
+ Interface file start: 2014/01/01  00:00:00                                    
+ Simulation start:     2014/01/01  00:00:00                                    
+Same date/time found in interface file and model                               
+
+ *===================================================*
+ |             XP Note Field Summary                 |
+ *===================================================*
+
+
+
+
+ *=================================*
+ |   Conduit Convergence Criteria  |
+ *=================================*
+
+              Conduit        Full     Conduit 
+                 Name        Flow       Slope 
+ --------------------  ----------  ---------- 
+             PILAC033     333.7527      0.0062
+             PILAC034      93.1095      0.7857
+           PILAC036_1     304.4710      0.0052
+           PILAC036_2    1126.8543      0.0708
+           PILAC036_3     305.5571      0.0052
+           PILAC036_4    1001.6556      0.0559
+             PILAC037      11.8104      0.0027
+            PILAC1101     156.4779      2.2191
+             PILAC866      30.0399      0.0818
+             PILAC867     304.6356      0.0052
+           PILAC868_1     514.8146      0.0685
+           PILAC868_2     735.4261      0.1399
+           PIMHB438_1      29.1480      0.0770
+           PIMHB438_2      34.1481      0.1057
+             PIMHB509      37.3206      0.1262
+             PIMHB628      34.1437      0.1057
+             PIMHB986      29.1497      0.0770
+           PIOTH774_1       3.7389      0.0110
+           PIOTH774_2      10.1899      0.0818
+              Link440       0.0165      0.0000
+              Link442       4.4364      0.7250
+
+ *=================================*
+ |    Initial Model Condition      |
+ | Initial Time =      0.00 hours  |
+ *=================================*
+
+           Junction / Depth  / Elevation    ===>  "*" Junction is Surcharged.
+           CBMHB1134/   0.00 /    66.99            CBMHB1136/   0.00 /    56.34            CBMHB1139/   0.00 /    34.63
+           CBMHB1163/   0.00 /    55.62            CBOTH1169/   0.00 /    56.12            CBPRV1147/   0.00 /    61.88
+           CBPRV1149/   0.00 /    61.17            CBPRV1158/   0.00 /     0.00               DU0024/   0.00 /    42.94
+              DU0025/   0.00 /    43.71               DU0026/   0.00 /    32.00               DU0027/   0.00 /    19.00
+              DU0303/   0.00 /    56.21               DU0525/   0.00 /     0.00               DU0588/   0.00 /    43.02
+           MHLAC0279/   0.00 /    46.21            MHLAC0281/   0.00 /    44.54            MHLAC0283/   0.00 /    36.00
+           MHMHB0280/   0.00 /    52.49            OCOTH1164/   0.00 /     0.00            OFLAC0022/   0.00 /     4.61
+           OFMHB0021/   0.00 /    17.25
+
+             Conduit/       FLOW   ===> "*" Conduit uses the normal flow option.
+            PILAC033/       0.00             PILAC034/       0.00           PILAC036_1/       0.00 
+          PILAC036_2/       0.00           PILAC036_3/       0.00           PILAC036_4/       0.00 
+            PILAC037/       0.00            PILAC1101/       0.00             PILAC866/       0.00 
+            PILAC867/       0.00           PILAC868_1/       0.00           PILAC868_2/       0.00 
+          PIMHB438_1/       0.00           PIMHB438_2/       0.00             PIMHB509/       0.00 
+            PIMHB628/       0.00             PIMHB986/       0.00           PIOTH774_1/       0.00 
+          PIOTH774_2/       0.00              Link440/       0.00              Link442/       0.00 
+             FREE# 1/       0.00 
+
+             Conduit/   Velocity
+            PILAC033/       0.00             PILAC034/       0.00           PILAC036_1/       0.00
+          PILAC036_2/       0.00           PILAC036_3/       0.00           PILAC036_4/       0.00
+            PILAC037/       0.00            PILAC1101/       0.00             PILAC866/       0.00
+            PILAC867/       0.00           PILAC868_1/       0.00           PILAC868_2/       0.00
+          PIMHB438_1/       0.00           PIMHB438_2/       0.00             PIMHB509/       0.00
+            PIMHB628/       0.00             PIMHB986/       0.00           PIOTH774_1/       0.00
+          PIOTH774_2/       0.00              Link440/       0.00              Link442/       0.00
+
+             Conduit/ Cross Sectional Area
+            PILAC033/       0.00             PILAC034/       0.00           PILAC036_1/       0.00
+          PILAC036_2/       0.00           PILAC036_3/       0.00           PILAC036_4/       0.00
+            PILAC037/       0.00            PILAC1101/       0.00             PILAC866/       0.00
+            PILAC867/       0.00           PILAC868_1/       0.00           PILAC868_2/       0.00
+          PIMHB438_1/       0.00           PIMHB438_2/       0.00             PIMHB509/       0.00
+            PIMHB628/       0.00             PIMHB986/       0.00           PIOTH774_1/       0.00
+          PIOTH774_2/       0.00              Link440/       0.00              Link442/       0.00
+
+             Conduit/ Hydraulic Radius
+            PILAC033/       0.00             PILAC034/       0.00           PILAC036_1/       0.00
+          PILAC036_2/       0.00           PILAC036_3/       0.00           PILAC036_4/       0.00
+            PILAC037/       0.00            PILAC1101/       0.00             PILAC866/       0.00
+            PILAC867/       0.00           PILAC868_1/       0.00           PILAC868_2/       0.00
+          PIMHB438_1/       0.00           PIMHB438_2/       0.00             PIMHB509/       0.00
+            PIMHB628/       0.00             PIMHB986/       0.00           PIOTH774_1/       0.00
+          PIOTH774_2/       0.00              Link440/       0.00              Link442/       0.00
+
+             Conduit/ Upstream/ Downstream Elevation
+            PILAC033/    44.54/    44.54            PILAC034/    42.94/    42.94          PILAC036_1/    43.02/    43.02
+          PILAC036_2/    32.00/    32.00          PILAC036_3/    42.94/    42.94          PILAC036_4/    36.00/    36.00
+            PILAC037/     4.61/     4.61           PILAC1101/    43.02/    43.02            PILAC866/     0.00/     0.00
+            PILAC867/    43.71/    43.71          PILAC868_1/     0.00/     0.00          PILAC868_2/    19.00/    19.00
+          PIMHB438_1/    52.49/    52.49          PIMHB438_2/    34.63/    34.63            PIMHB509/    52.49/    52.49
+            PIMHB628/    17.25/    17.25            PIMHB986/    56.21/    56.21          PIOTH774_1/    55.62/    55.62
+          PIOTH774_2/     0.00/     0.00             Link440/     0.00/     0.00             Link442/     4.61/     4.61
+
+ ===> System inflows (file) at     2.08 hours (  Junction / Inflow, cfs)
+
+ CBMHB1134           / 2.67E-02 CBMHB1136           / 6.67E-02 CBMHB1139           / 4.01E-02 CBPRV1147           / 2.67E-02 CBPRV1149           / 6.93E-02 CBPRV1158           / 9.07E-02
+
+ Cycle        500      Time          2 Hrs -  5.00 Min
+
+           Junction / Depth  / Elevation    ===>  "*" Junction is Surcharged.
+           CBMHB1134/   0.03 /    67.02            CBMHB1136/   0.04 /    56.38            CBMHB1139/   0.07 /    34.70
+           CBMHB1163/   0.00 /    55.62            CBOTH1169/   0.00 /    56.12            CBPRV1147/   0.01 /    61.89
+           CBPRV1149/   0.02 /    61.19            CBPRV1158/  23.02 /    23.02               DU0024/   0.02 /    42.97
+              DU0025/   0.00 /    43.71               DU0026/   0.03 /    32.03               DU0027/   0.14 /    19.14
+              DU0303/   0.03 /    56.24               DU0525/  21.02 /    21.02               DU0588/   0.02 /    43.04
+           MHLAC0279/   0.00 /    46.21            MHLAC0281/   0.00 /    44.54            MHLAC0283/   0.02 /    36.02
+           MHMHB0280/   0.06 /    52.55            OCOTH1164/  23.01 /    23.01            OFLAC0022/   0.10 /     4.71
+           OFMHB0021/   0.06 /    17.31
+
+             Conduit/       FLOW   ===> "*" Conduit uses the normal flow option.
+            PILAC033/       0.00             PILAC034/       0.07           PILAC036_1/       0.00           PILAC036_2/       0.10*
+          PILAC036_3/       0.03*          PILAC036_4/       0.10             PILAC037/       0.10            PILAC1101/       0.03*
+            PILAC866/       0.00             PILAC867/       0.00           PILAC868_1/       0.10           PILAC868_2/       0.10*
+          PIMHB438_1/       0.03*          PIMHB438_2/       0.09*            PIMHB509/       0.07*            PIMHB628/       0.13 
+            PIMHB986/       0.03           PIOTH774_1/       0.00           PIOTH774_2/       0.00              Link440/      -0.05 
+             Link442/       0.13              FREE# 1/       0.23 
+
+ ===> System inflows (file) at     4.17 hours (  Junction / Inflow, cfs)
+
+ CBMHB1134           / 2.84E-02 CBMHB1136           / 7.09E-02 CBMHB1139           / 4.26E-02 CBPRV1147           / 2.84E-02 CBPRV1149           / 7.37E-02 CBPRV1158           / 9.64E-02
+
+ Cycle       1000      Time          4 Hrs - 10.00 Min
+
+           Junction / Depth  / Elevation    ===>  "*" Junction is Surcharged.
+           CBMHB1134/   0.03 /    67.02            CBMHB1136/   0.05 /    56.39            CBMHB1139/   0.07 /    34.70
+           CBMHB1163/   0.00 /    55.62            CBOTH1169/   0.00 /    56.12            CBPRV1147/   0.01 /    61.89
+           CBPRV1149/   0.03 /    61.20            CBPRV1158/  26.08 /    26.08               DU0024/   0.03 /    42.97
+              DU0025/   0.00 /    43.71               DU0026/   0.03 /    32.03               DU0027/   0.19 /    19.19
+              DU0303/   0.03 /    56.24               DU0525/  21.04 /    21.04               DU0588/   0.02 /    43.04
+           MHLAC0279/   0.00 /    46.21            MHLAC0281/   0.00 /    44.54            MHLAC0283/   0.02 /    36.02
+           MHMHB0280/   0.06 /    52.55            OCOTH1164/  26.08 /    26.08            OFLAC0022/   0.15 /     4.76
+           OFMHB0021/   0.06 /    17.31
+
+             Conduit/       FLOW   ===> "*" Conduit uses the normal flow option.
+            PILAC033/       0.00             PILAC034/       0.07           PILAC036_1/       0.00           PILAC036_2/       0.10*
+          PILAC036_3/       0.03*          PILAC036_4/       0.10             PILAC037/       0.20            PILAC1101/       0.03*
+            PILAC866/       0.10             PILAC867/       0.00           PILAC868_1/       0.10*          PILAC868_2/       0.20*
+          PIMHB438_1/       0.03*          PIMHB438_2/       0.10*            PIMHB509/       0.07*            PIMHB628/       0.14 
+            PIMHB986/       0.03           PIOTH774_1/       0.00           PIOTH774_2/       0.00              Link440/      -0.00 
+             Link442/       0.14              FREE# 1/       0.34 
+
+ ===> System inflows (file) at     6.25 hours (  Junction / Inflow, cfs)
+
+ CBMHB1134           / 3.04E-02 CBMHB1136           / 7.59E-02 CBMHB1139           / 4.56E-02 CBPRV1147           / 3.04E-02 CBPRV1149           / 7.90E-02 CBPRV1158           / 1.03E-01
+
+ Cycle       1500      Time          6 Hrs - 15.00 Min
+
+           Junction / Depth  / Elevation    ===>  "*" Junction is Surcharged.
+           CBMHB1134/   0.03 /    67.02            CBMHB1136/   0.05 /    56.39            CBMHB1139/   0.08 /    34.71
+           CBMHB1163/   0.00 /    55.62            CBOTH1169/   0.00 /    56.12            CBPRV1147/   0.01 /    61.89
+           CBPRV1149/   0.03 /    61.20            CBPRV1158/  26.08 /    26.08               DU0024/   0.03 /    42.97
+              DU0025/   0.00 /    43.71               DU0026/   0.03 /    32.03               DU0027/   0.20 /    19.20
+              DU0303/   0.03 /    56.24               DU0525/  21.04 /    21.04               DU0588/   0.02 /    43.04
+           MHLAC0279/   0.00 /    46.21            MHLAC0281/   0.00 /    44.54            MHLAC0283/   0.02 /    36.02
+           MHMHB0280/   0.06 /    52.55            OCOTH1164/  26.08 /    26.08            OFLAC0022/   0.16 /     4.77
+           OFMHB0021/   0.06 /    17.31
+
+             Conduit/       FLOW   ===> "*" Conduit uses the normal flow option.
+            PILAC033/       0.00             PILAC034/       0.08           PILAC036_1/       0.00           PILAC036_2/       0.11*
+          PILAC036_3/       0.03*          PILAC036_4/       0.11             PILAC037/       0.21            PILAC1101/       0.03*
+            PILAC866/       0.10             PILAC867/       0.00           PILAC868_1/       0.11*          PILAC868_2/       0.21*
+          PIMHB438_1/       0.03*          PIMHB438_2/       0.11*            PIMHB509/       0.08*            PIMHB628/       0.15 
+            PIMHB986/       0.03           PIOTH774_1/       0.00           PIOTH774_2/       0.00              Link440/      -0.00 
+             Link442/       0.15              FREE# 1/       0.36 
+
+ ===> System inflows (file) at     8.33 hours (  Junction / Inflow, cfs)
+
+ CBMHB1134           / 3.30E-02 CBMHB1136           / 8.25E-02 CBMHB1139           / 4.95E-02 CBPRV1147           / 3.30E-02 CBPRV1149           / 8.57E-02 CBPRV1158           / 1.12E-01
+
+ Cycle       2000      Time          8 Hrs - 20.00 Min
+
+           Junction / Depth  / Elevation    ===>  "*" Junction is Surcharged.
+           CBMHB1134/   0.03 /    67.02            CBMHB1136/   0.05 /    56.39            CBMHB1139/   0.08 /    34.71
+           CBMHB1163/   0.00 /    55.62            CBOTH1169/   0.00 /    56.12            CBPRV1147/   0.01 /    61.89
+           CBPRV1149/   0.03 /    61.20            CBPRV1158/  26.09 /    26.09               DU0024/   0.03 /    42.97
+              DU0025/   0.00 /    43.71               DU0026/   0.03 /    32.03               DU0027/   0.21 /    19.21
+              DU0303/   0.03 /    56.24               DU0525/  21.04 /    21.04               DU0588/   0.03 /    43.04
+           MHLAC0279/   0.00 /    46.21            MHLAC0281/   0.00 /    44.54            MHLAC0283/   0.03 /    36.03
+           MHMHB0280/   0.06 /    52.55            OCOTH1164/  26.09 /    26.09            OFLAC0022/   0.16 /     4.77
+           OFMHB0021/   0.07 /    17.32
+
+             Conduit/       FLOW   ===> "*" Conduit uses the normal flow option.
+            PILAC033/       0.00             PILAC034/       0.09           PILAC036_1/       0.00           PILAC036_2/       0.12*
+          PILAC036_3/       0.03*          PILAC036_4/       0.12             PILAC037/       0.23            PILAC1101/       0.03*
+            PILAC866/       0.11             PILAC867/       0.00           PILAC868_1/       0.12*          PILAC868_2/       0.23*
+          PIMHB438_1/       0.03*          PIMHB438_2/       0.12*            PIMHB509/       0.08*            PIMHB628/       0.16 
+            PIMHB986/       0.03           PIOTH774_1/       0.00           PIOTH774_2/       0.00              Link440/      -0.00 
+             Link442/       0.16              FREE# 1/       0.39 
+
+ ===> System inflows (file) at    10.42 hours (  Junction / Inflow, cfs)
+
+ CBMHB1134           / 3.65E-02 CBMHB1136           / 9.11E-02 CBMHB1139           / 5.47E-02 CBPRV1147           / 3.65E-02 CBPRV1149           / 9.46E-02 CBPRV1158           / 1.24E-01
+
+ Cycle       2500      Time         10 Hrs - 25.00 Min
+
+           Junction / Depth  / Elevation    ===>  "*" Junction is Surcharged.
+           CBMHB1134/   0.03 /    67.02            CBMHB1136/   0.05 /    56.39            CBMHB1139/   0.08 /    34.71
+           CBMHB1163/   0.00 /    55.62            CBOTH1169/   0.00 /    56.12            CBPRV1147/   0.01 /    61.89
+           CBPRV1149/   0.03 /    61.20            CBPRV1158/  26.09 /    26.09               DU0024/   0.03 /    42.97
+              DU0025/   0.00 /    43.71               DU0026/   0.04 /    32.04               DU0027/   0.22 /    19.22
+              DU0303/   0.03 /    56.24               DU0525/  21.04 /    21.04               DU0588/   0.03 /    43.05
+           MHLAC0279/   0.00 /    46.21            MHLAC0281/   0.00 /    44.54            MHLAC0283/   0.03 /    36.03
+           MHMHB0280/   0.07 /    52.56            OCOTH1164/  26.09 /    26.09            OFLAC0022/   0.17 /     4.78
+           OFMHB0021/   0.07 /    17.32
+
+             Conduit/       FLOW   ===> "*" Conduit uses the normal flow option.
+            PILAC033/       0.00             PILAC034/       0.09           PILAC036_1/       0.00           PILAC036_2/       0.13*
+          PILAC036_3/       0.04           PILAC036_4/       0.13             PILAC037/       0.25            PILAC1101/       0.04*
+            PILAC866/       0.12             PILAC867/       0.00           PILAC868_1/       0.13*          PILAC868_2/       0.25*
+          PIMHB438_1/       0.04*          PIMHB438_2/       0.13*            PIMHB509/       0.09*            PIMHB628/       0.18 
+            PIMHB986/       0.04           PIOTH774_1/       0.00           PIOTH774_2/       0.00              Link440/      -0.00 
+             Link442/       0.18              FREE# 1/       0.44 
+
+ ===> System inflows (file) at    12.50 hours (  Junction / Inflow, cfs)
+
+ CBMHB1134           / 4.14E-02 CBMHB1136           / 1.03E-01 CBMHB1139           / 6.21E-02 CBPRV1147           / 4.14E-02 CBPRV1149           / 1.07E-01 CBPRV1158           / 1.40E-01
+
+ Cycle       3000      Time         12 Hrs - 30.00 Min
+
+           Junction / Depth  / Elevation    ===>  "*" Junction is Surcharged.
+           CBMHB1134/   0.04 /    67.03            CBMHB1136/   0.06 /    56.40            CBMHB1139/   0.09 /    34.72
+           CBMHB1163/   0.00 /    55.62            CBOTH1169/   0.00 /    56.12            CBPRV1147/   0.01 /    61.89
+           CBPRV1149/   0.03 /    61.20            CBPRV1158/  26.09 /    26.09               DU0024/   0.03 /    42.98
+              DU0025/   0.00 /    43.71               DU0026/   0.04 /    32.04               DU0027/   0.23 /    19.23
+              DU0303/   0.04 /    56.25               DU0525/  21.05 /    21.05               DU0588/   0.03 /    43.05
+           MHLAC0279/   0.00 /    46.21            MHLAC0281/   0.00 /    44.54            MHLAC0283/   0.03 /    36.03
+           MHMHB0280/   0.07 /    52.56            OCOTH1164/  26.09 /    26.09            OFLAC0022/   0.18 /     4.79
+           OFMHB0021/   0.07 /    17.32
+
+             Conduit/       FLOW   ===> "*" Conduit uses the normal flow option.
+            PILAC033/       0.00             PILAC034/       0.11           PILAC036_1/       0.00           PILAC036_2/       0.15*
+          PILAC036_3/       0.04           PILAC036_4/       0.15             PILAC037/       0.29            PILAC1101/       0.04*
+            PILAC866/       0.14             PILAC867/       0.00           PILAC868_1/       0.15*          PILAC868_2/       0.29*
+          PIMHB438_1/       0.04*          PIMHB438_2/       0.14*            PIMHB509/       0.10*            PIMHB628/       0.21 
+            PIMHB986/       0.04           PIOTH774_1/       0.00           PIOTH774_2/       0.00              Link440/      -0.00 
+             Link442/       0.21              FREE# 1/       0.49 
+
+ ===> System inflows (file) at    14.58 hours (  Junction / Inflow, cfs)
+
+ CBMHB1134           / 4.92E-02 CBMHB1136           / 1.23E-01 CBMHB1139           / 7.38E-02 CBPRV1147           / 4.92E-02 CBPRV1149           / 1.28E-01 CBPRV1158           / 1.67E-01
+
+ Cycle       3500      Time         14 Hrs - 35.00 Min
+
+           Junction / Depth  / Elevation    ===>  "*" Junction is Surcharged.
+           CBMHB1134/   0.04 /    67.03            CBMHB1136/   0.06 /    56.40            CBMHB1139/   0.09 /    34.72
+           CBMHB1163/   0.00 /    55.62            CBOTH1169/   0.00 /    56.12            CBPRV1147/   0.01 /    61.89
+           CBPRV1149/   0.04 /    61.21            CBPRV1158/  26.10 /    26.10               DU0024/   0.04 /    42.98
+              DU0025/   0.00 /    43.71               DU0026/   0.04 /    32.04               DU0027/   0.25 /    19.25
+              DU0303/   0.04 /    56.25               DU0525/  21.05 /    21.05               DU0588/   0.03 /    43.05
+           MHLAC0279/   0.00 /    46.21            MHLAC0281/   0.00 /    44.54            MHLAC0283/   0.03 /    36.03
+           MHMHB0280/   0.08 /    52.57            OCOTH1164/  26.10 /    26.10            OFLAC0022/   0.20 /     4.81
+           OFMHB0021/   0.08 /    17.33
+
+             Conduit/       FLOW   ===> "*" Conduit uses the normal flow option.
+            PILAC033/       0.00             PILAC034/       0.13           PILAC036_1/       0.00           PILAC036_2/       0.18*
+          PILAC036_3/       0.05           PILAC036_4/       0.18             PILAC037/       0.34            PILAC1101/       0.05*
+            PILAC866/       0.17             PILAC867/       0.00           PILAC868_1/       0.18*          PILAC868_2/       0.34*
+          PIMHB438_1/       0.05*          PIMHB438_2/       0.17*            PIMHB509/       0.12*            PIMHB628/       0.25 
+            PIMHB986/       0.05           PIOTH774_1/       0.00           PIOTH774_2/       0.00              Link440/      -0.00 
+             Link442/       0.25              FREE# 1/       0.59 
+
+ ===> System inflows (file) at    16.67 hours (  Junction / Inflow, cfs)
+
+ CBMHB1134           / 6.49E-02 CBMHB1136           / 1.62E-01 CBMHB1139           / 9.74E-02 CBPRV1147           / 6.49E-02 CBPRV1149           / 1.68E-01 CBPRV1158           / 2.19E-01
+
+ Cycle       4000      Time         16 Hrs - 40.00 Min
+
+           Junction / Depth  / Elevation    ===>  "*" Junction is Surcharged.
+           CBMHB1134/   0.05 /    67.04            CBMHB1136/   0.07 /    56.41            CBMHB1139/   0.11 /    34.74
+           CBMHB1163/   0.00 /    55.62            CBOTH1169/   0.00 /    56.12            CBPRV1147/   0.02 /    61.90
+           CBPRV1149/   0.04 /    61.21            CBPRV1158/  26.11 /    26.11               DU0024/   0.05 /    42.99
+              DU0025/   0.00 /    43.71               DU0026/   0.05 /    32.05               DU0027/   0.28 /    19.28
+              DU0303/   0.05 /    56.26               DU0525/  21.07 /    21.07               DU0588/   0.04 /    43.06
+           MHLAC0279/   0.00 /    46.21            MHLAC0281/   0.00 /    44.54            MHLAC0283/   0.04 /    36.04
+           MHMHB0280/   0.09 /    52.58            OCOTH1164/  26.11 /    26.11            OFLAC0022/   0.23 /     4.84
+           OFMHB0021/   0.09 /    17.34
+
+             Conduit/       FLOW   ===> "*" Conduit uses the normal flow option.
+            PILAC033/       0.00             PILAC034/       0.17           PILAC036_1/       0.00           PILAC036_2/       0.23*
+          PILAC036_3/       0.06           PILAC036_4/       0.23             PILAC037/       0.45            PILAC1101/       0.06*
+            PILAC866/       0.22             PILAC867/       0.00           PILAC868_1/       0.23*          PILAC868_2/       0.45*
+          PIMHB438_1/       0.06*          PIMHB438_2/       0.23*            PIMHB509/       0.16*            PIMHB628/       0.32 
+            PIMHB986/       0.06           PIOTH774_1/       0.00           PIOTH774_2/       0.00              Link440/      -0.00 
+             Link442/       0.32              FREE# 1/       0.77 
+
+ ===> System inflows (file) at    18.75 hours (  Junction / Inflow, cfs)
+
+ CBMHB1134           / 1.39E-01 CBMHB1136           / 3.42E-01 CBMHB1139           / 2.10E-01 CBPRV1147           / 1.40E-01 CBPRV1149           / 3.54E-01 CBPRV1158           / 4.59E-01
+
+ Cycle       4500      Time         18 Hrs - 45.00 Min
+
+           Junction / Depth  / Elevation    ===>  "*" Junction is Surcharged.
+           CBMHB1134/   0.07 /    67.06            CBMHB1136/   0.10 /    56.44            CBMHB1139/   0.15 /    34.78
+           CBMHB1163/   0.00 /    55.62            CBOTH1169/   0.00 /    56.12            CBPRV1147/   0.03 /    61.91
+           CBPRV1149/   0.07 /    61.24            CBPRV1158/  26.15 /    26.15               DU0024/   0.08 /    43.02
+              DU0025/   0.00 /    43.71               DU0026/   0.09 /    32.09               DU0027/   0.39 /    19.39
+              DU0303/   0.07 /    56.28               DU0525/  21.11 /    21.11               DU0588/   0.07 /    43.09
+           MHLAC0279/   0.00 /    46.21            MHLAC0281/   0.00 /    44.54            MHLAC0283/   0.07 /    36.07
+           MHMHB0280/   0.12 /    52.61            OCOTH1164/  26.15 /    26.15            OFLAC0022/   0.33 /     4.94
+           OFMHB0021/   0.13 /    17.38
+
+             Conduit/       FLOW   ===> "*" Conduit uses the normal flow option.
+            PILAC033/       0.00             PILAC034/       0.35           PILAC036_1/       0.00           PILAC036_2/       0.49*
+          PILAC036_3/       0.14           PILAC036_4/       0.49             PILAC037/       0.91            PILAC1101/       0.14*
+            PILAC866/       0.46             PILAC867/       0.00           PILAC868_1/       0.48*          PILAC868_2/       0.94*
+          PIMHB438_1/       0.14*          PIMHB438_2/       0.48*            PIMHB509/       0.34*            PIMHB628/       0.68 
+            PIMHB986/       0.14           PIOTH774_1/       0.00           PIOTH774_2/       0.00              Link440/      -0.00 
+             Link442/       0.68              FREE# 1/       1.59 
+
+ ===> System inflows (file) at    20.83 hours (  Junction / Inflow, cfs)
+
+ CBMHB1134           / 4.29E-02 CBMHB1136           / 1.08E-01 CBMHB1139           / 6.42E-02 CBPRV1147           / 4.28E-02 CBPRV1149           / 1.12E-01 CBPRV1158           / 1.47E-01
+
+ Cycle       5000      Time         20 Hrs - 50.00 Min
+
+           Junction / Depth  / Elevation    ===>  "*" Junction is Surcharged.
+           CBMHB1134/   0.04 /    67.03            CBMHB1136/   0.06 /    56.40            CBMHB1139/   0.09 /    34.72
+           CBMHB1163/   0.00 /    55.62            CBOTH1169/   0.00 /    56.12            CBPRV1147/   0.01 /    61.89
+           CBPRV1149/   0.03 /    61.20            CBPRV1158/  26.10 /    26.10               DU0024/   0.04 /    42.98
+              DU0025/   0.00 /    43.71               DU0026/   0.04 /    32.04               DU0027/   0.24 /    19.24
+              DU0303/   0.04 /    56.25               DU0525/  21.05 /    21.05               DU0588/   0.03 /    43.05
+           MHLAC0279/   0.00 /    46.21            MHLAC0281/   0.00 /    44.54            MHLAC0283/   0.03 /    36.03
+           MHMHB0280/   0.07 /    52.56            OCOTH1164/  26.10 /    26.10            OFLAC0022/   0.19 /     4.80
+           OFMHB0021/   0.08 /    17.33
+
+             Conduit/       FLOW   ===> "*" Conduit uses the normal flow option.
+            PILAC033/       0.00             PILAC034/       0.11*          PILAC036_1/       0.00           PILAC036_2/       0.16*
+          PILAC036_3/       0.04           PILAC036_4/       0.16             PILAC037/       0.31            PILAC1101/       0.04*
+            PILAC866/       0.15             PILAC867/       0.00           PILAC868_1/       0.16*          PILAC868_2/       0.30*
+          PIMHB438_1/       0.04*          PIMHB438_2/       0.15*            PIMHB509/       0.11*            PIMHB628/       0.22 
+            PIMHB986/       0.04*          PIOTH774_1/       0.00           PIOTH774_2/       0.00              Link440/       0.00 
+             Link442/       0.22              FREE# 1/       0.53 
+
+ ===> System inflows (file) at    22.92 hours (  Junction / Inflow, cfs)
+
+ CBMHB1134           / 2.88E-02 CBMHB1136           / 7.22E-02 CBMHB1139           / 4.31E-02 CBPRV1147           / 2.88E-02 CBPRV1149           / 7.52E-02 CBPRV1158           / 9.84E-02
+
+ Cycle       5500      Time         22 Hrs - 55.00 Min
+
+           Junction / Depth  / Elevation    ===>  "*" Junction is Surcharged.
+           CBMHB1134/   0.03 /    67.02            CBMHB1136/   0.05 /    56.39            CBMHB1139/   0.07 /    34.70
+           CBMHB1163/   0.00 /    55.62            CBOTH1169/   0.00 /    56.12            CBPRV1147/   0.01 /    61.89
+           CBPRV1149/   0.03 /    61.20            CBPRV1158/  26.08 /    26.08               DU0024/   0.03 /    42.97
+              DU0025/   0.00 /    43.71               DU0026/   0.03 /    32.03               DU0027/   0.19 /    19.19
+              DU0303/   0.03 /    56.24               DU0525/  21.04 /    21.04               DU0588/   0.02 /    43.04
+           MHLAC0279/   0.00 /    46.21            MHLAC0281/   0.00 /    44.54            MHLAC0283/   0.02 /    36.02
+           MHMHB0280/   0.06 /    52.55            OCOTH1164/  26.08 /    26.08            OFLAC0022/   0.15 /     4.76
+           OFMHB0021/   0.06 /    17.31
+
+             Conduit/       FLOW   ===> "*" Conduit uses the normal flow option.
+            PILAC033/       0.00             PILAC034/       0.08*          PILAC036_1/       0.00           PILAC036_2/       0.10*
+          PILAC036_3/       0.03           PILAC036_4/       0.10             PILAC037/       0.20            PILAC1101/       0.03*
+            PILAC866/       0.10             PILAC867/       0.00           PILAC868_1/       0.10*          PILAC868_2/       0.20*
+          PIMHB438_1/       0.03*          PIMHB438_2/       0.10*            PIMHB509/       0.07*            PIMHB628/       0.14 
+            PIMHB986/       0.03*          PIOTH774_1/       0.00           PIOTH774_2/       0.00              Link440/       0.00 
+             Link442/       0.14              FREE# 1/       0.35 
+
+
+ *===================================================*
+ | Table E5 - Junction Time Limitation Summary       |
+ |              (0.10 or 0.25)* Depth * Area         |
+ | Time step = ------------------------------        |
+ |                  Sum of Flow                      |
+ *===================================================*
+ |  The time this junction was the limiting junction |
+ |                is listed in the third column.     |
+ *===================================================*
+
+             Junction     Time(.10)  Time(.25)  Time(sec)
+ --------------------     ---------  ---------  ---------
+            CBMHB1134        150.00     150.00      960.0
+            CBMHB1136         91.52     150.00        0.0
+            CBMHB1139        117.84     150.00        0.0
+            CBMHB1163        150.00     150.00        0.0
+            CBOTH1169        150.00     150.00        0.0
+            CBPRV1147        150.00     150.00        0.0
+            CBPRV1149        150.00     150.00        0.0
+            CBPRV1158         26.43      66.08        0.0
+               DU0024        150.00     150.00        0.0
+               DU0025        150.00     150.00        0.0
+               DU0026        150.00     150.00        0.0
+               DU0027         92.59     150.00        0.0
+               DU0303        150.00     150.00        0.0
+               DU0525         13.44      33.59    85440.0
+               DU0588        127.73     150.00        0.0
+            MHLAC0279        150.00     150.00        0.0
+            MHLAC0281        150.00     150.00        0.0
+            MHLAC0283        150.00     150.00        0.0
+            MHMHB0280        122.55     150.00        0.0
+            OCOTH1164         23.13      57.82        0.0
+            OFLAC0022        150.00     150.00        0.0
+            OFMHB0021         86.41     150.00        0.0
+ The junction requiring the smallest time step was...DU0525
+
+
+ *==========================================================*
+ |       Table E5a - Conduit Explicit Condition Summary     |
+ |       Courant   =         Conduit Length                 |
+ |       Time step = --------------------------------       |
+ |                      Velocity + sqrt(g*depth)            |
+ |                                                          |
+ |                  Conduit Implicit Condition Summary      |
+ |       Courant   =         Conduit Length                 |
+ |       Time step = --------------------------------       |
+ |                             Velocity                     |
+ *==========================================================*
+ |  The 3rd column is the Explicit time step times the      |
+ |      minimum courant time step factor                    |
+ |                                                          |
+ |  Minimum Conduit Time Step in seconds in the 4th column  |
+ |  in the list. Maximum possible is 10 * maximum time step |
+ |                                                          |
+ |  The 5th column is the maximum change at any time step   |
+ |  during the simulation. The 6th column is the wobble     |
+ |  value which is an indicator of the flow stability.      |
+ |                                                          |
+ |  You should use this section to find those conduits that |
+ |  are slowing your model down.  Use modify conduits to    |
+ |  alter the length of the slow conduits to make your      |
+ |  simulation faster, or change the conduit name to        |
+ |  "CHME?????" where ????? are any characters, this will   |
+ |  lengthen the conduit based on the model time step,      |
+ |  not the value listed in modify conduits.                |
+ *==========================================================*
+
+              Conduit  Time(exp)  Expl*Cmin  Time(imp) Time(min)  Max Qchange   Wobble  Type of Soln
+       --------------  ---------  ---------  --------- ---------  -----------  -------  ------------
+             PILAC033    150.00    150.00    150.00       6.8          0.000     0.000   Normal Soln
+             PILAC034      1.19      1.19      1.36       0.0         -0.012     0.027   Normal Soln
+           PILAC036_1    150.00    150.00    150.00       0.0          0.000     0.000   Normal Soln
+           PILAC036_2      5.92      5.92      8.03       0.0          0.015     0.003   Normal Soln
+           PILAC036_3      3.20      3.20      6.98       0.0          0.004     0.004   Normal Soln
+           PILAC036_4     13.91     13.91     19.21       0.0          0.009     0.004   Normal Soln
+             PILAC037     45.32     45.32    115.92       0.0          0.009     0.556   Normal Soln
+            PILAC1101      0.46      0.46      0.53       3.8          0.020     0.008   Normal Soln
+             PILAC866      1.72      1.72      2.25       0.0         -0.009     0.102   Normal Soln
+             PILAC867    150.00    150.00    150.00       0.0          0.000     0.000   Normal Soln
+           PILAC868_1     15.85     15.85     21.49       0.0          0.010     0.007   Normal Soln
+           PILAC868_2      1.11      1.11      1.76       0.0          0.014     0.009   Normal Soln
+           PIMHB438_1      5.57      5.57      8.19       0.0         -0.006     0.039   Normal Soln
+           PIMHB438_2     12.93     12.93     16.89       0.0          0.010     0.107   Normal Soln
+             PIMHB509      2.49      2.49      3.22       0.0         -0.013     0.068   Normal Soln
+             PIMHB628     11.21     11.21     14.17       0.0          0.016     0.161   Normal Soln
+             PIMHB986     16.16     16.16     21.55       0.0         -0.006     0.039   Normal Soln
+           PIOTH774_1    150.00    150.00    150.00       0.0          0.000     0.000   Normal Soln
+           PIOTH774_2    150.00    150.00    150.00       0.0          0.000     0.000   Normal Soln
+              Link440      0.34      0.34      8.14     218.8         -0.003   213.948   Normal Soln
+              Link442      0.37      0.37      0.42    1210.8          0.016     1.236   Normal Soln
+The conduit with the smallest time step limitation was..Link442
+The conduit with the largest wobble was.................Link440
+The conduit with the largest flow change in any
+consecutive time step...................................PILAC1101
+
+ *==================================================*
+ |  Table E6. Final Model Condition                 |
+ |            This table is used for steady state   |
+ |            flow comparison and is the information|
+ |            saved to the hot-restart file.        |
+ |            Final Time =    24.000 hours          |
+ *==================================================*
+
+           Junction / Depth  / Elevation    ===>  "*" Junction is Surcharged.
+           CBMHB1134/   0.03 /    67.02/           CBMHB1136/   0.04 /    56.38/           CBMHB1139/   0.07 /    34.70/
+           CBMHB1163/   0.00 /    55.62/           CBOTH1169/   0.00 /    56.12/           CBPRV1147/   0.01 /    61.89/
+           CBPRV1149/   0.02 /    61.19/           CBPRV1158/  26.08 /    26.08/              DU0024/   0.02 /    42.97/
+              DU0025/   0.00 /    43.71/              DU0026/   0.03 /    32.03/              DU0027/   0.18 /    19.18/
+              DU0303/   0.03 /    56.24/              DU0525/  21.04 /    21.04/              DU0588/   0.02 /    43.04/
+           MHLAC0279/   0.00 /    46.21/           MHLAC0281/   0.00 /    44.54/           MHLAC0283/   0.02 /    36.02/
+           MHMHB0280/   0.06 /    52.55/           OCOTH1164/  26.08 /    26.08/           OFLAC0022/   0.14 /     4.75/
+           OFMHB0021/   0.06 /    17.31/
+
+           Conduit/       Flow   ===> "*" Conduit uses the normal flow option.
+            PILAC033/       0.00 /            PILAC034/       0.07 /          PILAC036_1/       0.00 /
+          PILAC036_2/       0.09*/          PILAC036_3/       0.03 /          PILAC036_4/       0.09 /
+            PILAC037/       0.18 /           PILAC1101/       0.03*/            PILAC866/       0.09 /
+            PILAC867/       0.00 /          PILAC868_1/       0.09*/          PILAC868_2/       0.18*/
+          PIMHB438_1/       0.03*/          PIMHB438_2/       0.09*/            PIMHB509/       0.06*/
+            PIMHB628/       0.13 /            PIMHB986/       0.03*/          PIOTH774_1/       0.00 /
+          PIOTH774_2/       0.00 /             Link440/       0.00 /             Link442/       0.13 /
+             FREE# 1/       0.31 /
+
+              Conduit/   Velocity
+            PILAC033/       0.00 /            PILAC034/       6.97 /          PILAC036_1/       0.00 /
+          PILAC036_2/       2.68 /          PILAC036_3/       0.75 /          PILAC036_4/       2.46 /
+            PILAC037/       1.27 /           PILAC1101/       6.43 /            PILAC866/       3.72 /
+            PILAC867/       0.00 /          PILAC868_1/       2.69 /          PILAC868_2/       3.01 /
+          PIMHB438_1/       2.13 /          PIMHB438_2/       3.94 /            PIMHB509/       3.71 /
+            PIMHB628/       4.29 /            PIMHB986/       2.35 /          PIOTH774_1/       0.00 /
+          PIOTH774_2/       0.00 /             Link440/       0.00 /             Link442/       9.95 /
+
+         Conduit/      Width
+            PILAC033/       0.00 /            PILAC034/       0.59 /          PILAC036_1/       2.35 /
+          PILAC036_2/       2.35 /          PILAC036_3/       2.35 /          PILAC036_4/       2.35 /
+            PILAC037/       1.14 /           PILAC1101/       0.59 /            PILAC866/       0.59 /
+            PILAC867/       0.00 /          PILAC868_1/       1.76 /          PILAC868_2/       1.77 /
+          PIMHB438_1/       0.59 /          PIMHB438_2/       0.59 /            PIMHB509/       0.59 /
+            PIMHB628/       0.62 /            PIMHB986/       0.59 /          PIOTH774_1/       0.00 /
+          PIOTH774_2/       0.00 /             Link440/       0.00 /             Link442/       0.32 /
+
+        Junction/        EGL
+           CBMHB1134/       0.03 /           CBMHB1136/       0.04 /           CBMHB1139/       0.31 /
+           CBMHB1163/       0.00 /           CBOTH1169/       0.00 /           CBPRV1147/       0.01 /
+           CBPRV1149/       0.02 /           CBPRV1158/      26.08 /              DU0024/       0.78 /
+              DU0025/       0.00 /              DU0026/       0.14 /              DU0027/       0.32 /
+              DU0303/       0.11 /              DU0525/      24.64 /              DU0588/       0.66 /
+           MHLAC0279/       0.00 /           MHLAC0281/       0.00 /           MHLAC0283/       0.11 /
+           MHMHB0280/       0.27 /           OCOTH1164/      26.08 /           OFLAC0022/      13.56 /
+           OFMHB0021/       0.34 /
+
+        Junction/  Freeboard
+           CBMHB1134/       7.67 /           CBMHB1136/       3.72 /           CBMHB1139/       1.92 /
+           CBMHB1163/       1.77 /           CBOTH1169/       1.50 /           CBPRV1147/       1.69 /
+           CBPRV1149/       1.70 /           CBPRV1158/       1.99 /              DU0024/      19.08 /
+              DU0025/      32.67 /              DU0026/      11.14 /              DU0027/       7.62 /
+              DU0303/       5.21 /              DU0525/       6.93 /              DU0588/      20.58 /
+           MHLAC0279/      45.74 /           MHLAC0281/      46.96 /           MHLAC0283/      15.06 /
+           MHMHB0280/       7.71 /           OCOTH1164/      29.82 /           OFLAC0022/      23.25 /
+           OFMHB0021/       5.65 /
+
+        Junction/ Max Volume
+           CBMHB1134/       1.84 /           CBMHB1136/       2.39 /           CBMHB1139/       3.66 /
+           CBMHB1163/       0.00 /           CBOTH1169/       0.00 /           CBPRV1147/       0.85 /
+           CBPRV1149/       1.54 /           CBPRV1158/     329.90 /              DU0024/       2.36 /
+              DU0025/       0.00 /              DU0026/       2.47 /              DU0027/       9.50 /
+              DU0303/       1.84 /              DU0525/     266.65 /              DU0588/       2.38 /
+           MHLAC0279/       0.00 /           MHLAC0281/       0.00 /           MHLAC0283/       2.10 /
+           MHMHB0280/       2.99 /           OCOTH1164/     329.91 /           OFLAC0022/       8.07 /
+           OFMHB0021/       3.63 /
+
+        Junction/Total Fldng
+           CBMHB1134/       0.00 /           CBMHB1136/       0.00 /           CBMHB1139/       0.00 /
+           CBMHB1163/       0.00 /           CBOTH1169/       0.00 /           CBPRV1147/       0.00 /
+           CBPRV1149/       0.00 /           CBPRV1158/       0.00 /              DU0024/       0.00 /
+              DU0025/       0.00 /              DU0026/       0.00 /              DU0027/       0.00 /
+              DU0303/       0.00 /              DU0525/       0.00 /              DU0588/       0.00 /
+           MHLAC0279/       0.00 /           MHLAC0281/       0.00 /           MHLAC0283/       0.00 /
+           MHMHB0280/       0.00 /           OCOTH1164/       0.00 /           OFLAC0022/       0.00 /
+           OFMHB0021/       0.00 /
+
+         Conduit/ Cross Sectional Area
+            PILAC033/       0.00 /            PILAC034/       0.01 /          PILAC036_1/       0.00 /
+          PILAC036_2/       0.03 /          PILAC036_3/       0.03 /          PILAC036_4/       0.04 /
+            PILAC037/       0.14 /           PILAC1101/       0.00 /            PILAC866/       0.02 /
+            PILAC867/       0.00 /          PILAC868_1/       0.03 /          PILAC868_2/       0.06 /
+          PIMHB438_1/       0.01 /          PIMHB438_2/       0.02 /            PIMHB509/       0.02 /
+            PIMHB628/       0.03 /            PIMHB986/       0.01 /          PIOTH774_1/       0.00 /
+          PIOTH774_2/       0.00 /             Link440/       0.26 /             Link442/       0.01 /
+
+         Conduit/  Final Volume 
+            PILAC033/       0.00 /            PILAC034/       0.22 /          PILAC036_1/       0.45 /
+          PILAC036_2/       1.94 /          PILAC036_3/       0.50 /          PILAC036_4/       4.66 /
+            PILAC037/      52.12 /           PILAC1101/       0.03 /            PILAC866/       0.47 /
+            PILAC867/       0.00 /          PILAC868_1/       5.50 /          PILAC868_2/       0.85 /
+          PIMHB438_1/       0.58 /          PIMHB438_2/       3.84 /            PIMHB509/       0.53 /
+            PIMHB628/       4.91 /            PIMHB986/       1.52 /          PIOTH774_1/       0.00 /
+          PIOTH774_2/       0.00 /             Link440/       2.60 /             Link442/       0.13 /
+
+         Conduit/ Hydraulic Radius
+            PILAC033/       0.00 /            PILAC034/       0.02 /          PILAC036_1/       0.02 /
+          PILAC036_2/       0.03 /          PILAC036_3/       0.03 /          PILAC036_4/       0.03 /
+            PILAC037/       0.11 /           PILAC1101/       0.01 /            PILAC866/       0.04 /
+            PILAC867/       0.00 /          PILAC868_1/       0.03 /          PILAC868_2/       0.04 /
+          PIMHB438_1/       0.02 /          PIMHB438_2/       0.04 /            PIMHB509/       0.03 /
+            PIMHB628/       0.04 /            PIMHB986/       0.02 /          PIOTH774_1/       0.00 /
+          PIOTH774_2/       0.00 /             Link440/       0.12 /             Link442/       0.04 /
+
+         Conduit/ Upstream/ Downstream Elevation
+            PILAC033/    44.54/    44.54            PILAC034/    61.19/    42.97          PILAC036_1/    43.71/    43.04/
+          PILAC036_2/    36.02/    32.03          PILAC036_3/    43.04/    42.97          PILAC036_4/    42.97/    36.02/
+            PILAC037/    19.18/    18.14           PILAC1101/    61.89/    43.04            PILAC866/    26.08/    24.43/
+            PILAC867/    43.71/    43.71          PILAC868_1/    32.03/    21.04          PILAC868_2/    21.04/    19.18/
+          PIMHB438_1/    56.24/    52.55          PIMHB438_2/    52.55/    34.70            PIMHB509/    56.38/    52.55/
+            PIMHB628/    34.70/    17.31            PIMHB986/    67.02/    56.24          PIOTH774_1/    55.62/    55.62/
+          PIOTH774_2/    26.08/    26.08             Link440/    26.08/    26.08             Link442/    17.31/    10.06/
+
+
+ *=========================================================*
+ |         Table E7 -  Iteration Summary                   |
+ *=========================================================*
+
+ Total number of time steps simulated............       5760
+ Total number of passes in the simulation........      94759
+ Total number of time steps during simulation....      85991
+ Ratio of actual # of time steps / NTCYC.........     14.929
+ Average number of iterations per time step......      1.102
+ Average  time step size(seconds)................      1.005
+ Smallest time step size(seconds)................      1.000
+ Largest  time step size(seconds)................     15.000
+ Average minimum Conduit Courant time step (sec).      1.066
+ Average minimum implicit time step (sec)........      0.733
+ Average minimum junction time step (sec)........      0.733
+ Average Courant Factor Tf.......................      0.733
+ Number of times omega reduced...................        415
+
+
+ *=========================================================*
+ |     Table E8 - Junction Time Step Limitation Summary    |
+ *=========================================================*
+ |   Not Convr = Number of times this junction did not     |
+ |               converge during the simulation.           |
+ |   Avg Convr = Average junction iterations.              |
+ |   Conv err  = Mean convergence error.                   |
+ |   Omega Cng = Change of omega during iterations         |
+ |   Max Itern = Maximum number of iterations              |
+ *=========================================================*
+             Junction Not Convr Avg Convr Total Itt Omega Cng  Max Itern  Ittrn >10  Ittrn >25  Ittrn >40
+ -------------------- --------- --------- ---------  --------  ---------  ---------  ---------  ---------
+            CBMHB1134         0      1.02     87397         0         5         0         0         0
+            CBMHB1136         0      1.03     88650         0         6         0         0         0
+            CBMHB1139         0      1.06     91134         0        10         1         0         0
+            CBMHB1163         0      1.00     85991         0         1         0         0         0
+            CBOTH1169         0      1.00     85991         0         1         0         0         0
+            CBPRV1147         0      1.02     87361         0         6         0         0         0
+            CBPRV1149         0      1.03     88692         0         6         0         0         0
+            CBPRV1158         3      1.43    122880        15       501        17        17        17
+               DU0024         0      1.04     89540         0        13         1         0         0
+               DU0025         0      1.00     85991         0         1         0         0         0
+               DU0026         0      1.07     92048         0         5         0         0         0
+               DU0027         0      1.09     93357         0         5         0         0         0
+               DU0303         0      1.02     87849         0         5         0         0         0
+               DU0525         3      1.16     99398        10       501        13        13        13
+               DU0588         0      1.02     87985         1        17         1         0         0
+            MHLAC0279         0      1.00     85991         0         1         0         0         0
+            MHLAC0281         0      1.00     85991         0         1         0         0         0
+            MHLAC0283         0      1.05     90069         0         5         0         0         0
+            MHMHB0280         0      1.06     91267         0         5         0         0         0
+            OCOTH1164         0      1.32    113316         0         6         0         0         0
+            OFLAC0022         8      1.89    162481       197       501       203       203       201
+            OFMHB0021         9      1.59    136983       192       501       175       163       156
+ Total number of iterations for all junctions..   2140362
+ Minimum number of possible iterations.........   1891802
+ Efficiency of the simulation..................      1.13
+                                                   Good Efficiency
+
+ *==========================================================*
+ | Extran Efficiency is an indicator of the efficiency of   |
+ | the simulation.  Ideal efficiency is one iteration per   |
+ | time step.  Altering the underrelaxation parameter,      |
+ | lowering the time step, increasing the flow and head     |
+ | tolerance are good ways of improving the efficiency,     |
+ | another is lowering the internal time step. The lower the|
+ | efficiency generally the faster your model will run.     |
+ | If your efficiency is less than 1.5 then you may try     |
+ | increasing your time step so that your overall simulation|
+ | is faster.  Ideal efficiency would be around 2.0         |
+ |                                                          |
+ | Good Efficiency      < 1.5           mean iterations     |
+ | Excellent Efficiency < 2.5 and > 1.5 mean iterations     |
+ | Good      Efficiency < 4.0 and > 2.5 mean iterations     |
+ | Fair      Efficiency < 7.5 and > 4.0 mean iterations     |
+ | Poor Efficiency      > 7.5           mean iterations     |
+ *==========================================================*
+
+
+ *======================================================*
+ |        Table E9 - JUNCTION SUMMARY STATISTICS        |
+ | The Maximum area is only the area of the node, it    |
+ | does not include the area of the surrounding conduits|
+ *======================================================*
+
+                                  Uppermost   Maximum     Time        Feet of             Maximum   Maximum   Maximum   Maximum
+                           Ground PipeCrown  Junction      of       Surcharge  Freeboard Junction    Gutter    Gutter    Gutter
+             Junction   Elevation Elevation Elevation    Occurence     at Max   of node      Area     Depth     Width  Velocity
+                 Name        feet      feet      feet    Hr. Min.   Elevation      feet      ft^2      feet      feet      ft/s
+ --------------------   ---------  --------  --------   ---------   ---------  --------  -------- --------- --------- ---------
+           CBMHB1134     74.6860   68.4900   67.1361     19   14      0.0000    7.5499   12.5660    0.0000      0.00    0.0000
+           CBMHB1136     60.0990   57.8400   56.5304     19   14      0.0000    3.5686   12.5660    0.0000      0.00    0.0000
+           CBMHB1139     36.6230   36.1300   34.9216     19   14      0.0000    1.7014   12.5660    0.0000      0.00    0.0000
+           CBMHB1163     57.3890   56.6200   55.6200      0    0      0.0000    1.7690   12.5660    0.0000      0.00    0.0000
+           CBOTH1169     57.6160   57.1200   56.1200      0    0      0.0000    1.4960   12.5660    0.0000      0.00    0.0000
+           CBPRV1147     63.5790   63.3800   61.9480     19   13      0.0000    1.6310   12.5660    0.0000      0.00    0.0000
+           CBPRV1149     62.8940   62.6700   61.2925     19   14      0.0000    1.6015   12.5660    0.0000      0.00    0.0000
+           CBPRV1158     28.0710   27.5200   26.2537     19   14      0.0000    1.8173   12.5660    0.0000      0.00    0.0000
+              DU0024     62.0460   48.9420   43.1295     19   14      0.0000   18.9165   12.5660    0.0000      0.00    0.0000
+              DU0025     76.3800   49.7080   43.7080      0    0      0.0000   32.6720   12.5660    0.0000      0.00    0.0000
+              DU0026     43.1720   38.0000   32.1966     19   14      0.0000   10.9754   12.5660    0.0000      0.00    0.0000
+              DU0027     26.8000   23.5000   19.7563     19   16      0.0000    7.0437   12.5660    0.0000      0.00    0.0000
+              DU0303     61.4460   57.7090   56.3551     19   14      0.0000    5.0909   12.5660    0.0000      0.00    0.0000
+              DU0525     27.9680   25.8680   21.2196     19   14      0.0000    6.7484   12.5660    0.0000      0.00    0.0000
+              DU0588     63.6220   49.0180   43.2071     19   14      0.0000   20.4149   12.5660    0.0000      0.00    0.0000
+           MHLAC0279     91.9530   52.2100   46.2100      0    0      0.0000   45.7430   12.5660    0.0000      0.00    0.0000
+           MHLAC0281     91.5020   50.5400   44.5400      0    0      0.0000   46.9620   12.5660    0.0000      0.00    0.0000
+           MHLAC0283     51.0820   42.0000   36.1674     19   14      0.0000   14.9146   12.5660    0.0000      0.00    0.0000
+           MHMHB0280     60.2600   53.9900   52.7282     19   14      0.0000    7.5318   12.5660    0.0000      0.00    0.0000
+           OCOTH1164     55.9030   51.3520   26.2540     19   14      0.0000   29.6490   12.5660    0.0000      0.00    0.0000
+           OFLAC0022     28.0000   20.0000    5.2519     19   17      0.0000   22.7481   12.5660    0.0000      0.00    0.0000
+           OFMHB0021     22.9550   18.7500   17.5387     19   14      0.0000    5.4163   12.5660    0.0000      0.00    0.0000
+
+ *======================================================*
+ |        Table E10 - CONDUIT SUMMARY STATISTICS        |
+ | Note: The peak flow may be less than the design flow |
+ | and the conduit may still surcharge because of the   |
+ | downstream boundary conditions.                      |
+ |                                                      |
+ | * denotes an open conduit that has been overtopped   |
+ |   this is a potential source of severe errors        |
+ *======================================================*
+
+                                Conduit  Maximum  Maximum    Time      Maximum    Time   Ratio of    Maximum Water      Ratio
+                        Design   Design Vertical Computed     of      Computed     of     Max. to  Elev at Pipe Ends     d/D
+              Conduit     Flow Velocity    Depth     Flow  Occurence  Velocity Occurence   Design  Upstream  Dwnstrm   US   DS
+                 Name    (cfs)   (ft/s)     (in)    (cfs)   Hr.  Min.  (ft/s)   Hr.  Min.    Flow    (ft)     (ft)  
+ --------------------  ------- -------- --------  ------- -----------  ------- ----------  ------- -------- -------- ----- -----
+             PILAC033 333.7527  11.8041  72.0000   0.0000     0     0   0.0000     0    0   0.0000  44.5400  44.5400 .0000 .0000
+             PILAC034  93.1095  52.6892  18.0000   1.2682    19    14  17.0921    19   13   0.0136  61.2925  43.1295 0.082 0.125
+           PILAC036_1 304.4710  10.7685  72.0000   0.0000     0     0   0.0000     0    0   0.0000  43.7080  43.2071 .0000 .0000
+           PILAC036_2 1126.854  39.8543  72.0000   1.8917    19    14   7.0357    19   14   0.0017  36.1674  32.1966 0.028 0.033
+           PILAC036_3 305.5571  10.8069  72.0000   0.6238    19    14   2.0916    19   14   0.0020  43.2071  43.1295 0.032 0.031
+           PILAC036_4 1001.656  35.4263  72.0000   1.8919    19    14   6.4618    19   14   0.0019  43.1295  36.1674 0.031 0.028
+             PILAC037  11.8104   3.7594  24.0000   3.3725    19    17   3.1651    19   17   0.2856  19.7563  18.6419 0.378 0.321
+            PILAC1101 156.4779  88.5484  18.0000   0.6258    19    13  16.1037    19   13   0.0040  61.9480  43.2071 0.045 0.126
+             PILAC866  30.0399  16.9991  18.0000   1.5774    19    14   8.9719    19   14   0.0525  26.2537  24.6007 0.156 0.155
+             PILAC867 304.6356  10.7743  72.0000   0.0000     0     0   0.0000     0    0   0.0000  43.7080  43.7080 .0000 .0000
+           PILAC868_1 514.8146  32.3695  54.0000   1.8912    19    14   7.4678    19   14   0.0037  32.1966  21.2196 0.044 0.049
+           PILAC868_2 735.4261  46.2407  54.0000   3.4676    19    14   8.1472    19   13   0.0047  21.2196  19.7563 0.049 0.168
+           PIMHB438_1  29.1480  16.4944  18.0000   0.5820    19    14   5.8967    19   13   0.0200  56.3551  52.7282 0.097 0.159
+           PIMHB438_2  34.1481  19.3239  18.0000   1.8689    19    14  10.0056    19   14   0.0547  52.7282  34.9216 0.159 0.194
+             PIMHB509  37.3206  21.1192  18.0000   1.2874    19    14   9.4729    19   14   0.0345  56.5304  52.7282 0.127 0.159
+             PIMHB628  34.1437  19.3214  18.0000   2.8045    19    14  11.6164    19   14   0.0821  34.9216  17.5387 0.194 0.192
+             PIMHB986  29.1497  16.4954  18.0000   0.5821    19    14   6.4965    19   14   0.0200  67.1361  56.3551 0.097 0.097
+           PIOTH774_1   3.7389   4.7606  12.0000   0.0000     0     0   0.0000     0    0   0.0000  55.6200  55.6200 .0000 .0000
+           PIOTH774_2  10.1899  12.9742  12.0000   0.0000     0     0   0.0000     0    0   0.0000  26.2540  26.2540 .0000 .0000
+              Link440   0.0165   0.0000   6.0000  -0.0658     0    12  -1.3014     0   12  -3.9953  26.2540  26.2537 52.51 52.51
+              Link442   4.4364  22.5943   6.0000   2.8046    19    14  23.8876    19   14   0.6322  17.5387  10.2885 0.577 0.577
+              FREE# 1  Undefnd  Undefnd  Undefnd   6.0396    19    15
+
+
+ *==================================================*
+ | Table E11.  Area assumptions used in the analysis|
+ | Subcritical and Critical flow assumptions from   |
+ |    Subroutine Head.  See Figure 17-1 in the      |
+ |         manual for further information.          |
+ *==================================================*
+
+                      Duration    Duration  Durat. of Durat. of
+                         of       of Sub-    Upstream Downstream   Maximum   Maximum   Maximum
+             Conduit    Dry       Critical   Critical   Critical Hydraulic    X-Sect    Vel*D 
+              Name    Flow(min)  Flow(min)  Flow(min)  Flow(min)  Radius-m Area(ft^2) (ft^2/s)
+ -------------------- ---------- ----------  ---------  --------- ---------  --------- --------
+             PILAC033    1440.00       0.00       0.00       0.00     0.000     0.000     0.000
+             PILAC034      10.25    1429.75       0.00       0.00     0.082     0.097     2.646
+           PILAC036_1    1440.00       0.00       0.00       0.00     0.000     0.000     0.000
+           PILAC036_2       6.83    1433.17       0.00       0.00     0.116     0.287     1.281
+           PILAC036_3       6.50    1433.50       0.00       0.00     0.127     0.297     0.394
+           PILAC036_4       6.77    1433.23       0.00       0.00     0.125     0.280     1.146
+             PILAC037      68.88       0.00       0.00    1371.12     0.406     0.977     2.210
+            PILAC1101       6.50    1433.50       0.00       0.00     0.052     0.074     2.041
+             PILAC866     139.30       0.00       0.00    1300.70     0.144     0.175     2.091
+             PILAC867    1440.00       0.00       0.00       0.00     0.000     0.000     0.000
+           PILAC868_1       6.88    1371.08       0.00      62.03     0.130     0.272     1.554
+           PILAC868_2      68.88    1371.12       0.00       0.00     0.174     0.926     3.793
+           PIMHB438_1       7.60    1432.40       0.00       0.00     0.098     0.133     1.133
+           PIMHB438_2       8.00    1432.00       0.00       0.00     0.150     0.211     2.650
+             PIMHB509       9.52    1430.48       0.00       0.00     0.122     0.155     2.030
+             PIMHB628       6.50    1433.50       0.00       0.00     0.176     0.240     3.369
+             PIMHB986       7.52    1432.48       0.00       0.00     0.093     0.090     0.949
+           PIOTH774_1    1440.00       0.00       0.00       0.00     0.000     0.000     0.000
+           PIOTH774_2    1440.00       0.00       0.00       0.00     0.000     0.000     0.000
+              Link440      11.27    1428.73       0.00       0.00     0.152     0.261     4.663
+              Link442       6.50       0.00       0.00    1433.50     0.136     0.117     6.892
+
+ *===========================================*
+ | Table E12. Mean Conduit Flow Information  |
+ *===========================================*
+                           Mean         Total      Mean       Low      Mean      Mean     Mean      Mean
+              Conduit      Flow          Flow   Percent      Flow    Froude Hydraulic    Cross   Conduit
+                 Name     (cfs)        (ft^3)    Change  Weightng    Number    Radius     Area  Roughness
+ --------------------  --------      --------  --------  --------    ------  --------   ------- ---------
+             PILAC033    0.0000        0.0000    0.0000    0.0000    0.0000    0.0000   0.0000    0.0130
+             PILAC034    0.1239     10707.640    0.0000    0.9975    8.0186    0.0240   0.0138    0.0130
+           PILAC036_1    0.0000        0.0000    0.0000    0.0000    0.0000    0.0169   0.0051    0.0130
+           PILAC036_2    0.1717     14832.939    0.0000    0.9996    3.1324    0.0344   0.0518    0.0130
+           PILAC036_3    0.0478     4131.7587    0.0000    0.9997    0.8567    0.0345   0.0520    0.0130
+           PILAC036_4    0.1717     14834.856    0.0000    0.9996    2.8626    0.0362   0.0564    0.0130
+             PILAC037    0.3211     27743.044    0.0000    0.9567    0.5856    0.1371   0.1978    0.0130
+            PILAC1101    0.0478     4132.6083    0.0000    0.9997   11.7423    0.0126   0.0060    0.0130
+             PILAC866    0.1541     13310.381    0.0000    0.9076    2.5416    0.0455   0.0330    0.0130
+             PILAC867    0.0000        0.0000    0.0000    0.0000    0.0000    0.0000   0.0000    0.0130
+           PILAC868_1    0.1715     14821.891    0.0000    0.9996    2.8924    0.0365   0.0504    0.0130
+           PILAC868_2    0.3220     27821.743    0.0000    0.9567    2.6711    0.0502   0.0842    0.0130
+           PIMHB438_1    0.0478     4126.4621    0.0000    0.9991    2.3027    0.0286   0.0173    0.0130
+           PIMHB438_2    0.1670     14425.961    0.0000    0.9989    3.0338    0.0476   0.0336    0.0130
+             PIMHB509    0.1193     10303.552    0.0000    0.9980    3.2496    0.0387   0.0250    0.0130
+             PIMHB628    0.2387     20620.504    0.0000    0.9997    3.2270    0.0565   0.0439    0.0130
+             PIMHB986    0.0478     4127.1688    0.0000    0.9992    2.5394    0.0267   0.0157    0.0130
+           PIOTH774_1    0.0000        0.0000    0.0000    0.0000    0.0000    0.0000   0.0000    0.0130
+           PIOTH774_2    0.0000        0.0000    0.0000    0.0000    0.0000    0.0000   0.0000    0.0130
+              Link440   -0.0039     -340.2470    0.0000    0.9969    0.0022    0.1245   0.2563    0.0140
+              Link442    0.2387     20619.650    0.0000    0.9997    7.4645    0.0463   0.0191    0.0140
+              FREE# 1    0.5597     48362.372
+
+ *===============================================================*
+ | Table E13. Channel losses(H), headwater depth (HW), tailwater |
+ | depth (TW), critical and normal depth (Yc and Yn).            |
+ | Use this section for culvert comparisons                      |
+ *===============================================================*
+
+              Conduit   Maximum      Head  Friction  Critical    Normal        HW        TW
+                 Name      Flow      Loss      Loss     Depth     Depth    Elevat    Elevat
+ -------------------- --------- --------- --------- --------- --------- --------- ---------
+            PILAC033    0.0000    0.0000    0.0000    0.0000    0.0000    0.0000    0.0000   Max Flow
+            PILAC034    1.2648    0.0000   18.2165    0.4207    0.1220   61.2923   43.1292   Max Flow
+          PILAC036_1    0.0000    0.0000    0.0000    0.0000    0.0000    0.0000    0.0000   Max Flow
+          PILAC036_2    1.8897    0.0000    3.7875    0.3364    0.1351   36.1673   32.1966   Max Flow
+          PILAC036_3    0.6226    0.0000    0.0766    0.1732    0.1642   43.2069   43.1288   Max Flow
+          PILAC036_4    1.8886    0.0000    6.5404    0.3363    0.1519   43.1292   36.1673   Max Flow
+            PILAC037    3.3720    0.0000    0.9346    0.6419    0.7310   19.7562   18.6419   Max Flow
+           PILAC1101    0.6247    0.0000    9.6345    0.2926    0.0661   61.9480   43.2069   Max Flow
+            PILAC866    1.5750    0.0000    1.6501    0.4707    0.2325   26.2535   24.6005   Max Flow
+            PILAC867    0.0000    0.0000    0.0000    0.0000    0.0000    0.0000    0.0000   Max Flow
+          PILAC868_1    1.8908    0.0000   10.5926    0.3796    0.1925   32.1966   21.2195   Max Flow
+          PILAC868_2    3.4658    0.0000    0.9260    0.5168    0.2111   21.2195   19.7365   Max Flow
+          PIMHB438_1    0.5810    0.0000    2.8438    0.2813    0.1436   56.3550   52.7276   Max Flow
+          PIMHB438_2    1.8618    0.0000   16.2870    0.5129    0.2375   52.7278   34.9206   Max Flow
+            PIMHB509    1.2815    0.0000    3.5349    0.4234    0.1890   56.5300   52.7276   Max Flow
+            PIMHB628    2.7947    0.0000   17.1771    0.6339    0.2893   34.9212   17.5380   Max Flow
+            PIMHB986    0.5810    0.0000   10.7799    0.2813    0.1436   67.1360   56.3550   Max Flow
+          PIOTH774_1    0.0000    0.0000    0.0000    0.0000    0.0000    0.0000    0.0000   Max Flow
+          PIOTH774_2    0.0000    0.0000    0.0000    0.0000    0.0000    0.0000    0.0000   Max Flow
+             Link440    0.0074    0.0000    0.0054    0.0412    0.1267   26.1964   26.1941   Max Flow
+             Link442    2.7943    0.0000    7.2492    0.5000    0.2879   17.5380   10.2879   Max Flow
+
+ *==========================================================*
+ | Table E13a. CULVERT ANALYSIS CLASSIFICATION,             |
+ | and the time the culvert was in a particular             |
+ | classification during the simulation.  The time is       |
+ | in minutes.  The Dynamic Wave Equation is used for       |
+ | all conduit analysis but the culvert flow classification |
+ | condition is based on the HW and TW depths.              |
+ *==========================================================*
+                           Mild      Mild     Steep                Mild      Mild
+                          Slope  Slope TW  Slope TW Slug Flow     Slope     Slope
+                     Critical D   Control   Insignf   Outlet/    TW > D   TW <= D                    
+              Conduit    Outlet    Outlet  Entrance  Entrance    Outlet    Outlet    Outlet     Inlet         Inlet
+                 Name   Control   Control   Control   Control   Control   Control   Control   Control Configuration
+ -------------------- --------- --------- --------- --------- --------- --------- --------- --------- -------------
+
+             PILAC033    0.0000    0.0000 1440.0000    0.0000    0.0000    0.0000    0.0000    0.0000 None
+             PILAC034    0.0000    0.0000 1440.0000    0.0000    0.0000    0.0000    0.0000    0.0000 None
+           PILAC036_1    0.0000    0.0000 1440.0000    0.0000    0.0000    0.0000    0.0000    0.0000 None
+           PILAC036_2    0.0000    0.0000 1440.0000    0.0000    0.0000    0.0000    0.0000    0.0000 None
+           PILAC036_3    0.0000    0.0000 1395.0000    3.0000    0.0000    0.0000   42.0000    0.0000 None
+           PILAC036_4    0.0000    0.0000 1440.0000    0.0000    0.0000    0.0000    0.0000    0.0000 None
+             PILAC037 1087.0000  285.0000   68.0000    0.0000    0.0000    0.0000    0.0000    0.0000 None
+            PILAC1101    0.0000    0.0000 1440.0000    0.0000    0.0000    0.0000    0.0000    0.0000 None
+             PILAC866    0.0000    0.0000 1440.0000    0.0000    0.0000    0.0000    0.0000    0.0000 None
+             PILAC867    0.0000    0.0000 1440.0000    0.0000    0.0000    0.0000    0.0000    0.0000 None
+           PILAC868_1    0.0000    0.0000 1440.0000    0.0000    0.0000    0.0000    0.0000    0.0000 None
+           PILAC868_2    0.0000    0.0000 1440.0000    0.0000    0.0000    0.0000    0.0000    0.0000 None
+           PIMHB438_1    0.0000    0.0000 1440.0000    0.0000    0.0000    0.0000    0.0000    0.0000 None
+           PIMHB438_2    0.0000    0.0000 1440.0000    0.0000    0.0000    0.0000    0.0000    0.0000 None
+             PIMHB509    0.0000    0.0000 1440.0000    0.0000    0.0000    0.0000    0.0000    0.0000 None
+             PIMHB628    0.0000    0.0000 1440.0000    0.0000    0.0000    0.0000    0.0000    0.0000 None
+             PIMHB986    0.0000    0.0000 1440.0000    0.0000    0.0000    0.0000    0.0000    0.0000 None
+           PIOTH774_1    0.0000    0.0000 1440.0000    0.0000    0.0000    0.0000    0.0000    0.0000 None
+           PIOTH774_2    0.0000    0.0000 1440.0000    0.0000    0.0000    0.0000    0.0000    0.0000 None
+              Link440    0.0000    3.0000    0.0000   11.0000 1426.0000    0.0000    0.0000    0.0000 None
+              Link442    0.0000    0.0000 1440.0000    0.0000    0.0000    0.0000    0.0000    0.0000 None
+
+   *=====================================*
+   |    Kinematic Wave Approximations    |
+   |  Time in Minutes for Each Condition |
+   *=====================================*
+
+              Conduit Duration of     Slope    Super-      Roll
+                 Name Normal Flow  Criteria  Critical     Waves
+ -------------------- ----------- --------- --------- ---------
+            PILAC033      0.0000    0.0000    0.0000    0.0000
+            PILAC034    293.0154  293.0346 1429.7500    0.0000
+          PILAC036_1      0.0000    0.0000    0.0000    0.0000
+          PILAC036_2   1427.0833 1427.0833 1432.5000    0.0000
+          PILAC036_3    587.4833 1424.7167    4.5423    0.0000
+          PILAC036_4      0.1538    0.1538 1433.1923    0.0000
+            PILAC037      0.0000    0.0000    0.5167    0.0000
+           PILAC1101   1433.5000 1433.5000 1433.5000    0.0000
+            PILAC866      0.1667    0.1667 1300.7000    0.0000
+            PILAC867      0.0000    0.0000    0.0000    0.0000
+          PILAC868_1   1300.2167 1300.2333 1431.8269    0.0000
+          PILAC868_2   1369.8333 1369.8333 1371.1167    0.0000
+          PIMHB438_1   1429.5385 1429.5577 1432.1154    0.0000
+          PIMHB438_2   1431.9808 1432.0385 1431.2115    0.0000
+            PIMHB509   1429.3901 1429.4464 1430.4808    0.0000
+            PIMHB628      2.1346    2.4231 1433.5000    0.0000
+            PIMHB986    286.4846 1417.5564 1431.9808    0.0000
+          PIOTH774_1      0.0000    0.0000    0.0000    0.0000
+          PIOTH774_2      0.0000    0.0000    0.0000    0.0000
+             Link440      0.0000  269.7833    0.0000    0.0000
+             Link442      2.5667    2.6833 1433.5000    0.0000
+
+ *=========================================================*
+ |     Table E15 - SPREADSHEET INFO LIST                   |
+ | Conduit Flow and Junction Depth Information for use in  |
+ | spreadsheets.  The maximum values in this table are the |
+ | true maximum values because they sample every time step.|
+ | The values in the review results may only be the        |
+ | maximum of a subset of all the time steps in the run.   |
+ | Note: These flows are only the flows in a single barrel.|
+ *=========================================================*
+
+            Conduit      Maximum         Total        Maximum       Maximum    ##             Junction     Invert       Maximum 
+              Name          Flow          Flow       Velocity        Volume    ##               Name      Elevation    Elevation 
+                           (cfs)         (ft^3)        (ft/s)        (ft^3)    ##                           (ft)         (ft)   
+ --------------------  ----------  ------------    ----------    ----------    ##  --------------------  ---------    --------- 
+            PILAC033       0.0000       0.0000         0.0000        0.0000    ##            CBMHB1134    66.9900      67.1361
+            PILAC034       1.2682   10707.6397        17.0921        0.0231    ##            CBMHB1136    56.3400      56.5304
+          PILAC036_1       0.0000       0.0000         0.0000        3.6624    ##            CBMHB1139    34.6300      34.9216
+          PILAC036_2       1.8917   14832.9388         7.0357        0.7971    ##            CBMHB1163    55.6200      55.6200
+          PILAC036_3       0.6238    4131.7587         2.0916        4.3401    ##            CBOTH1169    56.1200      56.1200
+          PILAC036_4       1.8919   14834.8559         6.4618        0.8377    ##            CBPRV1147    61.8800      61.9480
+            PILAC037       3.3725   27743.0442         3.1651      230.1878    ##            CBPRV1149    61.1700      61.2925
+           PILAC1101       0.6258    4132.6083        16.1037        0.0063    ##            CBPRV1158     0.0000      26.2537
+            PILAC866       1.5774   13310.3808         8.9719        0.4989    ##               DU0024    42.9420      43.1295
+            PILAC867       0.0000       0.0000         0.0000        0.0000    ##               DU0025    43.7080      43.7080
+          PILAC868_1       1.8912   14821.8906         7.4678        0.8724    ##               DU0026    32.0000      32.1966
+          PILAC868_2       3.4676   27821.7434         8.1472        5.0059    ##               DU0027    19.0000      19.7563
+          PIMHB438_1       0.5820    4126.4621         5.8967        0.4099    ##               DU0303    56.2090      56.3551
+          PIMHB438_2       1.8689   14425.9606        10.0056        0.5809    ##               DU0525     0.0000      21.2196
+            PIMHB509       1.2874   10303.5522         9.4729        0.2927    ##               DU0588    43.0180      43.2071
+            PIMHB628       2.8045   20620.5038        11.6164        0.6560    ##            MHLAC0279    46.2100      46.2100
+            PIMHB986       0.5821    4127.1688         6.4965        0.1700    ##            MHLAC0281    44.5400      44.5400
+          PIOTH774_1       0.0000       0.0000         0.0000        0.0000    ##            MHLAC0283    36.0000      36.1674
+          PIOTH774_2       0.0000       0.0000         0.0000        0.0000    ##            MHMHB0280    52.4900      52.7282
+             Link440      -0.0658    -340.2470        -1.3014        2.6073    ##            OCOTH1164     0.0000      26.2540
+             Link442       2.8046   20619.6503        23.8876        0.0467    ##            OFLAC0022     4.6100       5.2519
+             FREE# 1       6.0396   48362.3722         0.0000        0.0000    ##            OFMHB0021    17.2500      17.5387
+
+ *====================================================*
+ |     Table E15a - SPREADSHEET REACH LIST            |
+ | Peak flow and Total Flow listed by Reach or those  |
+ |      conduits or diversions having the same        |
+ |      upstream and downstream nodes.                |
+ *====================================================*
+
+            Upstream           Downstream    Maximum           Total 
+                Node                 Node       Flow            Flow 
+                                               (cfs)          (ft^3) 
+ -------------------- -------------------- ----------       ---------
+           CBPRV1149               DU0024     1.2682      10707.6397
+           MHLAC0283               DU0026     1.8917      14832.9388
+              DU0588               DU0024     0.6238       4131.7587
+              DU0024            MHLAC0283     1.8919      14834.8559
+              DU0027            OFLAC0022     3.3725      27743.0442
+           CBPRV1147               DU0588     0.6258       4132.6083
+           CBPRV1158               DU0525     1.5774      13310.3808
+              DU0026               DU0525     1.8912      14821.8906
+              DU0525               DU0027     3.4676      27821.7434
+              DU0303            MHMHB0280     0.5820       4126.4621
+           MHMHB0280            CBMHB1139     1.8689      14425.9606
+           CBMHB1136            MHMHB0280     1.2874      10303.5522
+           CBMHB1139            OFMHB0021     2.8045      20620.5038
+           CBMHB1134               DU0303     0.5821       4127.1688
+           OCOTH1164            CBPRV1158    -0.0658       -340.2470
+           OFMHB0021            OFLAC0022     2.8046      20619.6503
+
+ #########################################################
+ # Table E16. New Conduit Information Section            #
+ #            Conduit Invert (IE) Elevation and Conduit  #
+ #            Maximum Water Surface (WS) Elevations      #
+ #########################################################
+
+         Conduit Name        Upstream Node      Downstream Node      IE Up      IE Dn      WS Up      WS Dn  Conduit Type
+ -------------------- -------------------- -------------------- ---------- ---------- ---------- ---------- -------------
+             PILAC033            MHLAC0279            MHLAC0281     46.21      44.54      44.54      44.54     Circular 
+             PILAC034            CBPRV1149               DU0024     61.17      42.94      61.29      43.13     Circular 
+           PILAC036_1               DU0025               DU0588     43.71      43.02      43.71      43.21     Circular 
+           PILAC036_2            MHLAC0283               DU0026     36.00      32.00      36.17      32.20     Circular 
+           PILAC036_3               DU0588               DU0024     43.02      42.94      43.21      43.13     Circular 
+           PILAC036_4               DU0024            MHLAC0283     42.94      36.00      43.13      36.17     Circular 
+             PILAC037               DU0027            OFLAC0022     19.00      18.00      19.76      18.64     Circular 
+            PILAC1101            CBPRV1147               DU0588     61.88      43.02      61.95      43.21     Circular 
+             PILAC866            CBPRV1158               DU0525     26.02      24.37      26.25      24.60     Circular 
+             PILAC867            MHLAC0281               DU0025     44.54      43.71      43.71      43.71     Circular 
+           PILAC868_1               DU0026               DU0525     32.00      21.00      32.20      21.22     Circular 
+           PILAC868_2               DU0525               DU0027     21.00      19.00      21.22      19.76     Circular 
+           PIMHB438_1               DU0303            MHMHB0280     56.21      52.49      56.36      52.73     Circular 
+           PIMHB438_2            MHMHB0280            CBMHB1139     52.49      34.63      52.73      34.92     Circular 
+             PIMHB509            CBMHB1136            MHMHB0280     56.34      52.49      56.53      52.73     Circular 
+             PIMHB628            CBMHB1139            OFMHB0021     34.63      17.25      34.92      17.54     Circular 
+             PIMHB986            CBMHB1134               DU0303     66.99      56.21      67.14      56.36     Circular 
+           PIOTH774_1            CBOTH1169            CBMHB1163     56.12      55.62      55.62      55.62     Circular 
+           PIOTH774_2            CBMHB1163            OCOTH1164     55.62      50.35      26.25      26.25     Circular 
+              Link440            OCOTH1164            CBPRV1158        0.0000     0.0000  26.25      26.25     Circular 
+              Link442            OFMHB0021            OFLAC0022     17.25      10.00      17.54      10.29     Circular 
+
+ *=============================================================================*
+ |    Table E18 - Junction Continuity Error.   Division by Volume added 11/96  |
+ |                                                                             |
+ |  Continuity Error = Net Flow + Beginning Volume - Ending Volume             |
+ |                     -------------------------------------------------       |
+ |                     Total Flow + (Beginning Volume + Ending Volume)/2       |
+ |                                                                             |
+ |  Net Flow   = Node Inflow - Node Outflow                                    |
+ |  Total Flow = absolute (Inflow + Outflow)                                   |
+ |  Intermediate column is a judgement on the node continuity error.           |
+ |                                                                             |
+ |  Excellent  < 1 percent    Great  1 to  2 percent  Good  2 to  5 percent    |
+ |  Fair  5 to 10  percent    Poor  10 to 25 percent  Bad  25 to 50 percent    |
+ |  Terrible > 50  percent                                                     |
+ *=============================================================================*
+
+             Junction    <------Continuity Error ------->   Remaining   Beginning    Net Flow  Total Flow Failed to
+                 Name      Volume  % of Node  % of Inflow      Volume      Volume   Thru Node   Thru Node  Converge
+ --------------------    --------  ----------  ----------    --------  ----------  ----------  ---------- ---------
+           CBMHB1134      0.5200      0.0063      0.0011      1.1094      0.0000      1.6294   8255.9941         0
+           CBMHB1136      0.1994      0.0010      0.0004      0.8260      0.0000      1.0255  20608.0734         0
+           CBMHB1139     -0.9840     -0.0024      0.0020      5.2805      0.0000      4.2965  41245.1808         0
+           CBMHB1163     -0.0005      0.0000      0.0000      0.0005      0.0000      0.0000      0.0000         0
+           CBOTH1169     -0.0002      0.0000      0.0000      0.0002      0.0000      0.0000      0.0000         0
+           CBPRV1147      0.0095      0.0001      0.0000      0.1351      0.0000      0.1445   8265.0859         0
+           CBPRV1149      0.1047      0.0005      0.0002      0.4149      0.0000      0.5195  21415.8031         0
+           CBPRV1158      6.9637      0.0250      0.0141    329.2490      0.0000    336.2127  27642.3236         3
+              DU0024      1.6826      0.0057      0.0034      2.8844      0.0000      4.5669  29674.2543         0
+              DU0025     -0.7645      0.0000      0.0015      0.7645      0.0000      0.0000      0.0000         0
+              DU0026      6.6786      0.0225      0.0135      4.4560      0.0000     11.1346  29654.8294         0
+              DU0027     53.4275      0.0961      0.1080     25.6372      0.0000     79.0647  55564.7877         0
+              DU0303     -0.7470     -0.0090      0.0015      1.4976      0.0000      0.7506   8253.6309         0
+              DU0525     42.3305      0.0755      0.0856    268.4250      0.0000    310.7555  55954.0148         3
+              DU0588     -0.3980     -0.0048      0.0008      1.3185      0.0000      0.9204   8264.3670         0
+           MHLAC0279     -0.0013      0.0000      0.0000      0.0013      0.0000      0.0000      0.0000         0
+           MHLAC0281     -0.0021      0.0000      0.0000      0.0021      0.0000      0.0000      0.0000         0
+           MHLAC0283     -1.5964     -0.0054      0.0032      3.5707      0.0000      1.9743  29667.7947         0
+           MHMHB0280      0.4520      0.0016      0.0009      3.5835      0.0000      4.0356  28855.9750         0
+           OCOTH1164      6.2143      1.2312      0.0126    329.0147      0.0000    335.2290    340.2470         0
+           OFLAC0022    -23.9653     -0.0248      0.0484     24.2988      0.0000      0.3335  96725.0667         8
+           OFMHB0021     -2.0319     -0.0049      0.0041      2.9958      0.0000      0.9639  41240.1541         9
+ The total continuity error was   88.091     cubic feet
+ The remaining total volume was   1005.5     cubic feet
+ Your mean node continuity error was   Excellent                               
+ Your worst node continuity error was  Excellent                               
+
+   *===================================================*
+   |  Table E19 - Junction Inflow & Outflow Listing    |
+   |              Units are either ft^3 or m^3         |
+   |              depending on the units in your model.|
+   *===================================================*
+
+                        Constant       User       Interface       DWF         Inflow    RNF Layer     Inflow                                          
+             Junction     Inflow      Inflow        Inflow       Inlow       through      Inflow       from        Outflow    Evaporation       Basin 
+                 Name    to Node     to Node       to Node      to Node      Outfall      to Node    2D Layer     from Node    from Node        Infil.
+ --------------------  ----------  -----------  -----------  -----------  -----------  -----------  -----------  -----------  -----------  -----------
+           CBMHB1134      0.0000       0.0000    4129.0020       0.0000       0.0000       0.0000       0.0000       0.0000       0.0000         0.00
+           CBMHB1136      0.0000       0.0000   10304.9636       0.0000       0.0000       0.0000       0.0000       0.0000       0.0000         0.00
+           CBMHB1139      0.0000       0.0000    6198.8928       0.0000       0.0000       0.0000       0.0000       0.0000       0.0000         0.00
+           CBPRV1147      0.0000       0.0000    4132.5952       0.0000       0.0000       0.0000       0.0000       0.0000       0.0000         0.00
+           CBPRV1149      0.0000       0.0000   10708.6259       0.0000       0.0000       0.0000       0.0000       0.0000       0.0000         0.00
+           CBPRV1158      0.0000       0.0000   13992.3052       0.0000       0.0000       0.0000       0.0000       0.0000       0.0000         0.00
+           OFLAC0022      0.0000       0.0000       0.0000       0.0000       0.0000       0.0000       0.0000   48362.3722       0.0000         0.00
+
+   *=====================================================*
+   | Table E20 - Junction Flooding and Volume Listing.   |
+   |             The maximum volume is the total volume  |
+   |             in the node including the volume in the |
+   |             flooded storage area. This is the max   |
+   |             volume at any time. The volume in the   |
+   |             flooded storage area is the total volume|
+   |             above the ground elevation, where the   |
+   |             flooded pond storage area starts.       |
+   | The fourth column is instantaneous, the fifth is the|
+   | sum of the flooded volume over the entire simulation|
+   | Units are either ft^3 or m^3 depending on the units.|
+   *=====================================================*
+
+                                                     Out of               Passed to 2D cell
+                                                  1D-System               OR  Volume Stored
+             Junction    Surcharged   Flooded      (Flooded     Maximum    in allowed Flood
+                 Name    Time (min)  Time(min)      Volume)      Volume   Pond of 1D-System
+ --------------------    ----------  ---------    ---------   ---------   -----------------
+            CBMHB1134       0.000       0.000       0.000    1.84           0.000
+            CBMHB1136       0.000       0.000       0.000    2.39           0.000
+            CBMHB1139       0.000       0.000       0.000    3.66           0.000
+            CBMHB1163       0.000       0.000       0.000       0.000       0.000
+            CBOTH1169       0.000       0.000       0.000       0.000       0.000
+            CBPRV1147       0.000       0.000       0.000   0.855           0.000
+            CBPRV1149       0.000       0.000       0.000    1.54           0.000
+            CBPRV1158       0.000       0.000       0.000    330.           0.000
+               DU0024       0.000       0.000       0.000    2.36           0.000
+               DU0025       0.000       0.000       0.000       0.000       0.000
+               DU0026       0.000       0.000       0.000    2.47           0.000
+               DU0027       0.000       0.000       0.000    9.50           0.000
+               DU0303       0.000       0.000       0.000    1.84           0.000
+               DU0525       0.000       0.000       0.000    267.           0.000
+               DU0588       0.000       0.000       0.000    2.38           0.000
+            MHLAC0279       0.000       0.000       0.000       0.000       0.000
+            MHLAC0281       0.000       0.000       0.000       0.000       0.000
+            MHLAC0283       0.000       0.000       0.000    2.10           0.000
+            MHMHB0280       0.000       0.000       0.000    2.99           0.000
+            OCOTH1164       0.000       0.000       0.000    330.           0.000
+            OFLAC0022       0.000       0.000       0.000    8.07           0.000
+            OFMHB0021       0.000       0.000       0.000    3.63           0.000
+
+ *==================================*
+ | Simulation Specific Information  |
+ *==================================*
+ Number of Input Conduits..........        21 Number of Simulated Conduits......        22
+ Number of Natural Channels........         0 Number of Junctions...............        22
+ Number of Storage Junctions.......         0 Number of Weirs...................         0
+ Number of Orifices................         0 Number of Pumps...................         0
+ Number of Free Outfalls...........         1 Number of Tide Gate Outfalls......         0
+
+
+ *=========================================================*
+ | Average % Change in Junction or Conduit is defined as:  |
+ | Conduit  % Change ==> 100.0 ( Q(n+1) - Q(n) ) / Qfull   |
+ | Junction % Change ==> 100.0 ( Y(n+1) - Y(n) ) / Yfull   |
+ *=========================================================*
+
+ The Conduit with the largest average change was..             FREE# 1 with     0.000 percent
+ The Junction with the largest average change was.           OCOTH1164 with     0.031 percent
+ The Conduit with the largest sinuosity was.......             Link440 with   213.948
+
+
+ *===================================================================*
+ | Table E21. Continuity balance at the end of the simulation        |
+ |            Junction Inflow, Outflow or Street Flooding            |
+ | Error = Inflow  + Initial Volume - Outflow - Final   Volume       |
+ *===================================================================*
+
+             Inflow          Inflow       Average
+             Junction   Volume,ft^3   Inflow, cfs
+ --------------------  ------------  -------------
+           CBMHB1134     4128.8253         0.0478
+           CBMHB1136    10304.5212         0.1193
+           CBMHB1139     6198.7164         0.0717
+           CBPRV1147     4132.4776         0.0478
+           CBPRV1149    10708.1633         0.1239
+           CBPRV1158    13991.6958         0.1619
+           OFLAC0022   -48362.3722        -0.5597
+
+             Outflow      Outflow          Average
+             Junction  Volume,ft^3    Outflow, cfs
+ --------------------  ------------   ------------
+           OFLAC0022    48362.3722         0.5597
+
+
+ *=====================================================*
+ | Initial system volume        =         0.0000 Cu Ft |
+ | Total system inflow volume   =     49466.3847 Cu Ft |
+ | Inflow + Initial volume      =     49466.3847 Cu Ft |
+ *=====================================================*
+ | Total system outflow         =     48362.3722 Cu Ft |
+ | Volume left (Final volume)   =      1005.4657 Cu Ft |
+ | Evaporation                  =         0.0000 Cu Ft |
+ | Basin Infiltration           =         0.0000 Cu Ft |
+ | Outflow + Final Volume       =     49367.8379 Cu Ft |
+ *=====================================================*
+
+ *===============================================*
+ | Total Model Continuity Error                  |
+ | Error in Continuity, Percent =         0.1992 |
+ | Error in Continuity, ft^3    =        98.5468 |
+ | + Error means a continuity loss, - a gain     |
+ *===============================================*
+
+
+ ###################################################
+ # Table E22. Numerical Model judgement section    #
+ ###################################################
+
+ Overall error was (minimum of Table E18 & E21)              0.1781 percent
+ Worst nodal error was in node DU0027               with     0.0962 percent
+ Of the total inflow this loss was                           0.1080 percent
+ Your overall continuity error was                  Excellent
+                                                   Excellent Efficiency
+ Efficiency of the simulation                       1.13
+ Most Number of Non Convergences at one Node        9.
+ Total Number Non Convergences at all Nodes        23.
+ Total Number of Nodes with Non Convergences        4.
+
+
+ #########################################################
+ # Table E23. New Basin Design Information               #
+ #            Maximum Hydraulic Grade Line,              #
+ #            Out Conduit Sizes and Maximum Flow         #
+ #########################################################
+
+ A) Resize d/s Pipes based on given HGL
+ B) Resize Basin based on given HGL
+ C) Resize d/s Pipes and Basin based on HGL and max discharge
+ D) Resize d/s pipes based on given max discharge
+
+         Basin Name    Type    Max.HGL        Conduit         Depth   Width   Barrels   Max.Flow
+                                 (ft)                          (ft)    (ft)             (ft^3/s)
+ -------------------- ------  --------- -------------------- ------- ------- --------- ---------
+
+ ===> Hydraulic model simulation ended normally.
+ ===> XP-SWMM Simulation ended normally.
+ ===> Your input file was named  : C:\temp\1D\la_routing\la_routing.DAT
+ ===> Your output file was named : C:\temp\1D\la_routing\la_routing.out
+
+ *==============================================================*
+ |         XPSWMM/XPSTORM Simulation Date and Time Summary      |
+ *==============================================================*
+ | Starting Date... October    30, 2020  Time...  18:15:26.598  |
+ |   Ending Date... October    30, 2020  Time...  18:15:31.364  |
+ |  Elapsed Time...    0.07839 minutes or      4.70312 seconds  |
+ *==============================================================*
+
