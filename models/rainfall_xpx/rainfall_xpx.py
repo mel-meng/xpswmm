@@ -30,7 +30,7 @@ A	10	6	0.06
     """
     with open(xpx_path, 'w') as o:
 
-        df = pd.read_csv(csv_path)
+        df = pd.read_csv(csv_path, dtype=object)
         for station in df['STATION'].unique():
             df2 = df.loc[df['STATION']==station]
             ct = len(df2['R_RAIN'])
